@@ -7,4 +7,12 @@ public class MovimentoNota : MonoBehaviour
     {
         transform.position += velocidaddy * Time.deltaTime * Vector3.up;
     }
+
+    private void OnTriggerEnter(Collider collision)
+    {
+        if (collision.gameObject.CompareTag ("Limite"))
+        {
+            Destroy(gameObject);
+        }
+    }
 }

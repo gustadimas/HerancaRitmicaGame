@@ -7,7 +7,13 @@ public class DestruirNotas : MonoBehaviour
 {
     GameObject[] notasRed, notasGreen, notasPink, notasBlue;
     [SerializeField] Collider areaRed, areaGreen, areaPink, areaBlue;
+    public static int pontos;
+    [SerializeField] Slider barra;
 
+    private void Start()
+    {
+        pontos = 50;
+    }
     private void OnMouseUpAsButton()
     {
         if (gameObject.name == "BotaoRed")
@@ -28,6 +34,7 @@ public class DestruirNotas : MonoBehaviour
         notasGreen = GameObject.FindGameObjectsWithTag("Green");
         notasPink = GameObject.FindGameObjectsWithTag("Pink");
         notasBlue = GameObject.FindGameObjectsWithTag("Blue");
+        AlterarBarra();
     }
     public void DestruirRed()
     {
@@ -36,7 +43,12 @@ public class DestruirNotas : MonoBehaviour
             Collider redCol = vermelho.GetComponent<Collider>();
             if (areaRed.bounds.Intersects(redCol.bounds))
             {
+                pontos += 3;
                 Destroy(vermelho);
+            }
+            else
+            {
+                pontos--;
             }
         }        
     }
@@ -48,7 +60,12 @@ public class DestruirNotas : MonoBehaviour
             Collider greenCol = verde.GetComponent<Collider>();
             if (areaGreen.bounds.Intersects(greenCol.bounds))
             {
+                pontos += 3;
                 Destroy(verde);
+            }
+            else
+            {
+                pontos--;
             }
         }
     }
@@ -60,7 +77,12 @@ public class DestruirNotas : MonoBehaviour
             Collider pinkCol = rosa.GetComponent<Collider>();
             if (areaPink.bounds.Intersects(pinkCol.bounds))
             {
+                pontos += 3;
                 Destroy(rosa);
+            }
+            else
+            {
+                pontos--;
             }
         }
     }
@@ -72,8 +94,18 @@ public class DestruirNotas : MonoBehaviour
             Collider blueCol = azul.GetComponent<Collider>();
             if (areaBlue.bounds.Intersects(blueCol.bounds))
             {
+                pontos += 3;
                 Destroy(azul);
             }
+            else
+            {
+                pontos--;
+            }
         }
+    }
+
+    void AlterarBarra()
+    {
+        barra.value = pontos;
     }
 }
