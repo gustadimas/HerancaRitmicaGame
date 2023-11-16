@@ -5,50 +5,97 @@ using UnityEngine.UI;
 
 public class DestruirNotas : MonoBehaviour
 {
-    GameObject[] notasRed, notasGreen, notasPink, notasBlue;
     [SerializeField] Collider areaRed, areaGreen, areaPink, areaBlue;
-    public static int pontos;
     [SerializeField] Slider barra;
+    public static float pontos;
 
     private void Start()
     {
         pontos = 50;
     }
-    private void OnMouseUpAsButton()
-    {
-        if (gameObject.name == "BotaoRed")
-            DestruirRed();
-
-        if (gameObject.name == "BotaoGreen")
-            DestruirGreen();
-
-        if (gameObject.name == "BotaoPink")
-            DestruirPink();
-
-        if (gameObject.name == "BotaoBlue")
-            DestruirBlue();
-    }
     void Update()
     {
-        notasRed = GameObject.FindGameObjectsWithTag("Red");
-        notasGreen = GameObject.FindGameObjectsWithTag("Green");
-        notasPink = GameObject.FindGameObjectsWithTag("Pink");
-        notasBlue = GameObject.FindGameObjectsWithTag("Blue");
-        AlterarBarra();
+        barra.value = pontos;
+        if (Input.touchCount > 0)
+        {
+            Ray raio = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
+            
+            if (Physics.Raycast(raio, out RaycastHit hit))
+            {
+                if (hit.collider.CompareTag("Red"))
+                {
+                    if (hit.collider.bounds.Intersects(areaRed.bounds))
+                    {
+                        pontos++;
+                        Destroy(hit.collider.gameObject);
+                    }
+                    else
+                    {
+                        pontos -= 0.5f;
+                        Destroy(hit.collider.gameObject);
+                    }
+                }
+
+                if (hit.collider.CompareTag("Green"))
+                {
+                    if (hit.collider.bounds.Intersects(areaGreen.bounds))
+                    {
+                        pontos++;
+                        Destroy(hit.collider.gameObject);
+                    }
+                    else
+                    {
+                        pontos -= 0.5f;
+                        Destroy(hit.collider.gameObject);
+                    }
+                }
+
+                if (hit.collider.CompareTag("Pink"))
+                {
+                    if (hit.collider.bounds.Intersects(areaPink.bounds))
+                    {
+                        pontos++;
+                        Destroy(hit.collider.gameObject);
+                    }
+                    else
+                    {
+                        pontos -= 0.5f;
+                        Destroy(hit.collider.gameObject);
+                    }
+                }
+
+                if (hit.collider.CompareTag("Blue"))
+                {
+                    if (hit.collider.bounds.Intersects(areaBlue.bounds))
+                    {
+                        pontos++;
+                        Destroy(hit.collider.gameObject);
+                    }
+                    else
+                    {
+                        pontos -= 0.5f;
+                        Destroy(hit.collider.gameObject);
+                    }
+                }
+            }
+
+
+        }
     }
-    public void DestruirRed()
+   /* void DestruirRed()
     {
         foreach (GameObject vermelho in notasRed)
         {
             Collider redCol = vermelho.GetComponent<Collider>();
             if (areaRed.bounds.Intersects(redCol.bounds))
             {
-                pontos += 3;
+                LimiteNotas.pontos += 3;
                 Destroy(vermelho);
             }
             else
             {
-                pontos--;
+                //LimiteNotas.pontos -= 0.5f;
+                Destroy(gameObject);
             }
         }        
     }
@@ -60,12 +107,13 @@ public class DestruirNotas : MonoBehaviour
             Collider greenCol = verde.GetComponent<Collider>();
             if (areaGreen.bounds.Intersects(greenCol.bounds))
             {
-                pontos += 3;
+                LimiteNotas.pontos += 3;
                 Destroy(verde);
             }
             else
             {
-                pontos--;
+                //LimiteNotas.pontos -= 0.5f;
+                Destroy(gameObject);
             }
         }
     }
@@ -77,12 +125,13 @@ public class DestruirNotas : MonoBehaviour
             Collider pinkCol = rosa.GetComponent<Collider>();
             if (areaPink.bounds.Intersects(pinkCol.bounds))
             {
-                pontos += 3;
+                LimiteNotas.pontos += 3;
                 Destroy(rosa);
             }
             else
             {
-                pontos--;
+                // LimiteNotas.pontos -= 0.5f;
+                Destroy(gameObject);
             }
         }
     }
@@ -94,18 +143,14 @@ public class DestruirNotas : MonoBehaviour
             Collider blueCol = azul.GetComponent<Collider>();
             if (areaBlue.bounds.Intersects(blueCol.bounds))
             {
-                pontos += 3;
+                LimiteNotas.pontos += 3;
                 Destroy(azul);
             }
             else
             {
-                pontos--;
+                //LimiteNotas.pontos -= 0.5f;
+                Destroy(gameObject);
             }
         }
-    }
-
-    void AlterarBarra()
-    {
-        barra.value = pontos;
-    }
+    }*/
 }
