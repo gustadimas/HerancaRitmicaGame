@@ -1,45 +1,53 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class MovimentoNPC : MonoBehaviour
 {
-    public NavMeshAgent agente;
-    public float alcance;
+    NavMeshAgent agent;
 
-    public Transform pontoCentral;
+    [SerializeField] float raioDeVagar = 15f;
+    [SerializeField] float tempoEntreDestinos = 8f;
 
-    void Start()
+    private void Start()
     {
-        agente = GetComponent<NavMeshAgent>();
+        agent = GetComponent<NavMeshAgent>();
+        StartCoroutine(Vagar());
     }
 
-    void Update()
+    private IEnumerator Vagar()
     {
-        if (agente.remainingDistance <= agente.stoppingDistance)
+        while (true)
         {
-            Vector3 ponto;
-
-            if (PontoAleatorio(pontoCentral.position, alcance, out ponto))
-            {
-                Debug.DrawRay(ponto, Vector3.up, Color.blue, 1.0f);
-
-                agente.SetDestination(ponto);
-            }
+            Vector3 destination = ObterDestinoAleatorio();
+            agent.SetDestination(destination);
+            tempoEntreDestinos = Random.Range(3f, 8f);
+            yield return new WaitForSeconds(tempoEntreDestinos);
         }
     }
 
-    bool PontoAleatorio(Vector3 centro, float alcance, out Vector3 resultado)
+    private Vector3 ObterDestinoAleatorio()
     {
-        Vector3 pontoAleatorio = centro + Random.insideUnitSphere * alcance;
-        NavMeshHit hit;
+        NavMeshHit _hit;
+        NavMesh.SamplePosition(Random.insideUnitSphere * raioDeVagar + base.transform.position, out _hit, raioDeVagar, -1);
+        return _hit.position;
+    }
 
-        if (NavMesh.SamplePosition(pontoAleatorio, out hit, 1.0f, NavMesh.AllAreas))
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.tag == "projetil")
         {
-            resultado = hit.position;
-            return true;
+            Object.Destroy(other.gameObject);
+            base.gameObject.SetActive(false);
         }
+    }
 
-        resultado = Vector3.zero;
-        return false;
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "projetil")
+        {
+            Object.Destroy(other.gameObject);
+            base.gameObject.SetActive(false);
+        }
     }
 }
