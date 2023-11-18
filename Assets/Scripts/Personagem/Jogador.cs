@@ -29,6 +29,17 @@ public class Jogador : MonoBehaviour
             Joystick();
     }
 
+    void FixedUpdate()
+    {
+        if (direcaoMovimento != Vector3.zero)
+        {
+            Vector3 movimentoHorizontal = new Vector3(direcaoMovimento.x, 0, direcaoMovimento.y);
+
+            rb.MovePosition(transform.position + movimentoHorizontal * velocidadeMovimento * Time.deltaTime);
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movimentoHorizontal), 0.15f);
+        }
+    }
+
     void Joystick()
     {
         if (Input.touchCount > 0)
@@ -44,26 +55,25 @@ public class Jogador : MonoBehaviour
                     posicaoPonto = Vector2.ClampMagnitude(posicaoPonto, 50f);
 
                     pontoJoystick.position = (Vector2)joystick.position + posicaoPonto;
+
+                    // Defina a direção do movimento enquanto o dedo está se movendo
+                    direcaoMovimento = (pontoJoystick.position - joystick.position).normalized;
                 }
 
                 if (toque.phase == TouchPhase.Ended || toque.phase == TouchPhase.Canceled)
+                {
                     ResetarPosicaoJoystick();
+                    direcaoMovimento = Vector3.zero;
+                }
             }
-
             else
+            {
                 ResetarPosicaoJoystick();
+                direcaoMovimento = Vector3.zero;
+            }
         }
-
-        direcaoMovimento = (pontoJoystick.position - joystick.position).normalized;
-
-        if (direcaoMovimento != Vector3.zero)
-        {
-            rb.velocity = new Vector3(direcaoMovimento.x * velocidadeMovimento, rb.velocity.y, direcaoMovimento.y * velocidadeMovimento);
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(new Vector3(direcaoMovimento.x, 0, direcaoMovimento.y)), 0.15f);
-        }
-        else
-            rb.velocity = new Vector3(0, rb.velocity.y, 0);
     }
+
 
     void ResetarPosicaoJoystick()
     {
