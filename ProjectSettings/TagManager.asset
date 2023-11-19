@@ -4,12 +4,16 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - NPC
+  - Red
+  - Green
+  - Pink
+  - Blue
+  - Limite
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Post Processing
+  - 
   - Water
   - UI
   - 
