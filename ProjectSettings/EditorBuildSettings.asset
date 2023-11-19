@@ -9,8 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 6f3e8f2cc0734b64c80f72212aa437cc
   - enabled: 1
-    path: Assets/Scenes/Briga 1.unity
-    guid: 5f629e94c36be554fa887dae6ec77f2f
+    path: Assets/Scenes/Game.unity
+    guid: 72371e3af841ba1409f18dab9eb1130c
   - enabled: 1
     path: Assets/Scenes/Mapa.unity
     guid: 7e1ff3ae0aa8f494a895a43811478039

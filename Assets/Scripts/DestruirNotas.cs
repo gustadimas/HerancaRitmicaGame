@@ -1,17 +1,28 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class DestruirNotas : MonoBehaviour
 {
     [SerializeField] Collider areaRed, areaGreen, areaPink, areaBlue;
     [SerializeField] Slider barra;
-    public static float pontos;
+    public static float pontos, notasDestruidas;
+    Scene desafioAtual;
+    public static bool venceuJongo, venceuSussa;
 
     private void Start()
     {
         pontos = 50;
+        notasDestruidas = 0;
+        desafioAtual = SceneManager.GetActiveScene();
+        if (desafioAtual.name == "Jongo")
+        {
+            venceuJongo = false;
+        }
+        if (desafioAtual.name == "Sussa")
+        {
+            venceuSussa = false;
+        }
     }
     void Update()
     {
@@ -19,7 +30,7 @@ public class DestruirNotas : MonoBehaviour
         if (Input.touchCount > 0)
         {
             Ray raio = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
-            
+
             if (Physics.Raycast(raio, out RaycastHit hit))
             {
                 if (hit.collider.CompareTag("Red"))
@@ -27,11 +38,13 @@ public class DestruirNotas : MonoBehaviour
                     if (hit.collider.bounds.Intersects(areaRed.bounds))
                     {
                         pontos++;
+                        notasDestruidas++;
                         Destroy(hit.collider.gameObject);
                     }
                     else
                     {
-                        pontos -= 0.5f;
+                        pontos -= 0.75f;
+                        notasDestruidas++;
                         Destroy(hit.collider.gameObject);
                     }
                 }
@@ -41,11 +54,13 @@ public class DestruirNotas : MonoBehaviour
                     if (hit.collider.bounds.Intersects(areaGreen.bounds))
                     {
                         pontos++;
+                        notasDestruidas++;
                         Destroy(hit.collider.gameObject);
                     }
                     else
                     {
-                        pontos -= 0.5f;
+                        pontos -= 0.75f;
+                        notasDestruidas++;
                         Destroy(hit.collider.gameObject);
                     }
                 }
@@ -55,11 +70,13 @@ public class DestruirNotas : MonoBehaviour
                     if (hit.collider.bounds.Intersects(areaPink.bounds))
                     {
                         pontos++;
+                        notasDestruidas++;
                         Destroy(hit.collider.gameObject);
                     }
                     else
                     {
-                        pontos -= 0.5f;
+                        pontos -= 0.75f;
+                        notasDestruidas++;
                         Destroy(hit.collider.gameObject);
                     }
                 }
@@ -69,88 +86,71 @@ public class DestruirNotas : MonoBehaviour
                     if (hit.collider.bounds.Intersects(areaBlue.bounds))
                     {
                         pontos++;
+                        notasDestruidas++;
                         Destroy(hit.collider.gameObject);
                     }
                     else
                     {
-                        pontos -= 0.5f;
+                        pontos -= 0.75f;
+                        notasDestruidas++;
                         Destroy(hit.collider.gameObject);
                     }
                 }
             }
-
-
         }
-    }
-   /* void DestruirRed()
-    {
-        foreach (GameObject vermelho in notasRed)
+        if (desafioAtual.name == "Samba de Roda")
         {
-            Collider redCol = vermelho.GetComponent<Collider>();
-            if (areaRed.bounds.Intersects(redCol.bounds))
+            if (notasDestruidas >= 100)
             {
-                LimiteNotas.pontos += 3;
-                Destroy(vermelho);
+                ContabilizarPontos();
             }
-            else
-            {
-                //LimiteNotas.pontos -= 0.5f;
-                Destroy(gameObject);
-            }
-        }        
-    }
-    
-    void DestruirGreen()
-    {
-        foreach (GameObject verde in notasGreen)
+        }
+        if (desafioAtual.name == "Jongo")
         {
-            Collider greenCol = verde.GetComponent<Collider>();
-            if (areaGreen.bounds.Intersects(greenCol.bounds))
+            if (notasDestruidas >= 330)
             {
-                LimiteNotas.pontos += 3;
-                Destroy(verde);
+                ContabilizarPontos();
             }
-            else
+        }
+        if (desafioAtual.name == "Sussa")
+        {
+            if (notasDestruidas >= 100)
             {
-                //LimiteNotas.pontos -= 0.5f;
-                Destroy(gameObject);
+                ContabilizarPontos();
             }
         }
     }
 
-    void DestruirPink()
+    void ContabilizarPontos()
     {
-        foreach (GameObject rosa in notasPink)
+        if (desafioAtual.name == "Samba de Roda")
         {
-            Collider pinkCol = rosa.GetComponent<Collider>();
-            if (areaPink.bounds.Intersects(pinkCol.bounds))
+            SceneManager.LoadScene("Game");
+        }
+        if (desafioAtual.name == "Jongo")
+        {
+            if (barra.value > 50)
             {
-                LimiteNotas.pontos += 3;
-                Destroy(rosa);
+                venceuJongo = true;
+                SceneManager.LoadScene("Game");
             }
-            else
+            else if (barra.value <= 50)
             {
-                // LimiteNotas.pontos -= 0.5f;
-                Destroy(gameObject);
+                SceneManager.LoadScene("Game");
+            }
+        }
+
+        if (desafioAtual.name == "Sussa")
+        {
+            if (barra.value > 50)
+            {
+                venceuSussa = true;
+                SceneManager.LoadScene("Game");
+            }
+            else if (barra.value <= 50)
+            {
+                SceneManager.LoadScene("Game");
             }
         }
     }
-
-    void DestruirBlue()
-    {
-        foreach (GameObject azul in notasBlue)
-        {
-            Collider blueCol = azul.GetComponent<Collider>();
-            if (areaBlue.bounds.Intersects(blueCol.bounds))
-            {
-                LimiteNotas.pontos += 3;
-                Destroy(azul);
-            }
-            else
-            {
-                //LimiteNotas.pontos -= 0.5f;
-                Destroy(gameObject);
-            }
-        }
-    }*/
 }

@@ -13,7 +13,6 @@ public class InstanciarNota : MonoBehaviour
     {
         StartCoroutine(NotaSpawn());
     }
-
     IEnumerator NotaSpawn()
     {
         for(int i = 0; i < posTempoNota.Length; i++)
@@ -33,6 +32,7 @@ public class InstanciarNota : MonoBehaviour
         for (int i = 0; i <= posTempoNota.Length; i++)
         {
             posTempoNota[i].y = Random.Range(0f, 1f);
+            posTempoNota[i].x = Random.Range(0, 4);
         }
     }
         

@@ -1,11 +1,29 @@
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class MovimentoNota : MonoBehaviour
 {
-    [SerializeField] float velocidaddy;
+    float velocidade;
+    Scene desafioAtual;
+
+    private void Start()
+    {
+        desafioAtual = SceneManager.GetActiveScene();
+        if (desafioAtual.name == "Samba de Roda")
+        {
+            velocidade = 2.5f;
+        }
+        if (desafioAtual.name == "Jongo")
+        {
+            velocidade = 3;
+        }
+        if (desafioAtual.name == "Sussa")
+        {
+            velocidade = 5;
+        }
+    }
     void Update()
     {
-        transform.position += velocidaddy * Time.deltaTime * Vector3.down;
+        transform.position += velocidade * Time.deltaTime * Vector3.down;
     }
 
     private void OnTriggerEnter(Collider collision)
