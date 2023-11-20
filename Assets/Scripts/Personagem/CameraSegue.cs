@@ -9,12 +9,7 @@ public class CameraSegue : MonoBehaviour
     
     Vector3 velocidade = Vector3.zero;
 
-    void Start()
-    {
-        
-    }
-
-    void Update()
+    void FixedUpdate()
     {
         if (obj != null)
         {
