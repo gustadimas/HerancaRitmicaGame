@@ -9,11 +9,12 @@ TagManager:
   - Pink
   - Blue
   - Limite
+  - NPC
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Post Processing
   - Water
   - UI
   - 
