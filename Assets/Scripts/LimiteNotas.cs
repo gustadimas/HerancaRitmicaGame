@@ -8,7 +8,8 @@ public class LimiteNotas : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Destroy(other.gameObject);
-        DestruirNotas.pontos -= 0.5f;
+        DestruirNotas.pontos -= 1f;
         DestruirNotas.notasDestruidas++;
+        DestruirNotas.combo = 0;
     }
 }
