@@ -19,7 +19,8 @@ public class InstanciarNota : MonoBehaviour
         {
             yield return new WaitForSeconds(posTempoNota[i].y);
             GameObject novaNota = Instantiate(notinhas, posicoesPossiveis[(int)(posTempoNota[i].x)].position, Quaternion.identity);
-            novaNota.transform.GetComponentInChildren<MeshRenderer>().material.color = cores[(int)posTempoNota[i].x];
+            // novaNota.transform.GetComponentInChildren<MeshRenderer>().material.color = cores[(int)posTempoNota[i].x];
+            novaNota.transform.GetComponentInChildren<SpriteRenderer>().color = cores[(int)posTempoNota[i].x];
             novaNota.tag = tags[(int)posTempoNota[i].x];
         }        
     }
