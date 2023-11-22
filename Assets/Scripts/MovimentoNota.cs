@@ -8,7 +8,7 @@ public class MovimentoNota : MonoBehaviour
     private void Start()
     {
         desafioAtual = SceneManager.GetActiveScene();
-        if (desafioAtual.name == "Samba de Roda")
+        if (desafioAtual.name == "SambaDeRoda")
         {
             velocidade = 2.5f;
         }
