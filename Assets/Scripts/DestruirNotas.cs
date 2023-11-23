@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class DestruirNotas : MonoBehaviour
 {
-    [SerializeField] Collider2D areaRed, areaGreen, areaPink, areaBlue;
     [SerializeField] Slider barra;
     GameObject[] notasRed, notasGreen, notasPink, notasBlue;
     public static float pontos, notasDestruidas;
