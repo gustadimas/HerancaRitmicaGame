@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Data;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -299,19 +300,55 @@ public class DestruirNotas : MonoBehaviour
             case 3:
                 mensagemCombo.enabled = true;
                 mensagemCombo.sprite = mensagens[0];
+                StartCoroutine(AumentaEDiminui());
                 break;
 
             case 6:
                 mensagemCombo.sprite = mensagens[1];
+                StartCoroutine(AumentaEDiminui());
                 break;
 
             case 9:
                 mensagemCombo.sprite = mensagens[2];
+                StartCoroutine(AumentaEDiminui());
                 break;
 
             case 12:
                 mensagemCombo.sprite = mensagens[3];
+                StartCoroutine(AumentaEDiminui());
                 break;
         }
+    }
+
+    IEnumerator AumentaEDiminui()
+    {
+        float tempoDecorrido = 0f;
+        float duracaoAnimacao = 0.3f;
+
+        Vector3 escalaInicial = mensagemCombo.rectTransform.localScale;
+        Vector3 escalaFinal = new Vector3(1.5f, 1.5f, 1f);
+
+        while (tempoDecorrido < duracaoAnimacao)
+        {
+            mensagemCombo.rectTransform.localScale = Vector3.Lerp(escalaInicial, escalaFinal, tempoDecorrido / duracaoAnimacao);
+            tempoDecorrido += Time.deltaTime;
+            yield return null;
+        }
+
+        mensagemCombo.rectTransform.localScale = escalaFinal;
+
+        yield return new WaitForSeconds(0.2f);
+
+        tempoDecorrido = 0f;
+        escalaInicial = mensagemCombo.rectTransform.localScale;
+        escalaFinal = new Vector3(1f, 1f, 1f);
+
+        while (tempoDecorrido < duracaoAnimacao)
+        {
+            mensagemCombo.rectTransform.localScale = Vector3.Lerp(escalaInicial, escalaFinal, tempoDecorrido / duracaoAnimacao);
+            tempoDecorrido += Time.deltaTime;
+            yield return null;
+        }
+        mensagemCombo.rectTransform.localScale = escalaFinal;
     }
 }
