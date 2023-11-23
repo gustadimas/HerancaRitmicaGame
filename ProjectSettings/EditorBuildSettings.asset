@@ -5,25 +5,25 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Quilombo1.unity
     guid: 2eabef545660fce41ba71212c9f40e12
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: 6f3e8f2cc0734b64c80f72212aa437cc
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Game.unity
     guid: 72371e3af841ba1409f18dab9eb1130c
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Mapa.unity
     guid: 7e1ff3ae0aa8f494a895a43811478039
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Quingoma.unity
     guid: 3ee9c9bb8262de046bd00d2e7f30625b
   - enabled: 1
     path: Assets/Scenes/Quilombo2.unity
     guid: a958dc86bdd5fc34a9867356c8c60423
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Quilombo3.unity
     guid: 641f7e007e817df4ca4827dfc46a83dc
   m_configObjects: {}
