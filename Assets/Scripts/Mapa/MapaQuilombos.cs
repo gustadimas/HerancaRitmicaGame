@@ -7,7 +7,7 @@ using TMPro;
 public class MapaQuilombos : MonoBehaviour
 {
     [SerializeField] Transform containerNiveis;
-    List<GameObject> elementos = new List<GameObject>();
+    List<GameObject>elementos = new List<GameObject>();
     GameObject ElementoAtual => elementos[indiceAtual];
 
     [SerializeField] string nomeObjetoLabel1 = "Quilombo1Panel";
@@ -112,17 +112,17 @@ public class MapaQuilombos : MonoBehaviour
 
     void CenaQuilombo1()
     {
-        SceneManager.LoadScene("Quilombo1");
+        SceneManager.LoadScene("Quingoma");
     }
 
     void CenaQuilombo2()
     {
-        SceneManager.LoadScene("Quilombo2");
+        SceneManager.LoadScene("Quilombo1");
     }
 
     void CenaQuilombo3()
     {
-        SceneManager.LoadScene("Quilombo3");
+        SceneManager.LoadScene("Quilombo2");
     }
 
     void Quilombo1Concluido()

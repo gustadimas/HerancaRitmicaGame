@@ -12,14 +12,14 @@ public class CutsceneADM : MonoBehaviour
 
     void Start()
     {
-        Application.targetFrameRate = 60;
+        //Application.targetFrameRate = 60;
 
-        Invoke("TrocarImagens", 12f);
+        Invoke(nameof(TrocarImagens), 12f);
     }
 
     void Update()
     {
-        imagens[imagemAtual].color += new Color (0,0,0,0.01f);
+        imagens[imagemAtual].color += new Color (0,0,0,0.4f) * Time.deltaTime;
     }
 
     private void TrocarImagens()
@@ -34,9 +34,16 @@ public class CutsceneADM : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene("Quingoma");
+            SceneManager.LoadScene("Mapa");
+            ControladorCenas.quingoma = true;
         }
 
-        Invoke("TrocarImagens", 12f);
+        Invoke(nameof(TrocarImagens), 10f);
+    }
+
+    public void PularCutscene()
+    {
+        CancelInvoke();
+        TrocarImagens();
     }
 }

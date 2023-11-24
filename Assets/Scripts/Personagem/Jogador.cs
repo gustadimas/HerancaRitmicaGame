@@ -41,7 +41,7 @@ public class Jogador : MonoBehaviour
         {
             Vector3 movimentoHorizontal = new Vector3(direcaoMovimento.x, 0, direcaoMovimento.y);
 
-            rb.MovePosition(transform.position + movimentoHorizontal * velocidadeMovimento * Time.deltaTime);
+            rb.MovePosition(transform.position +  velocidadeMovimento * Time.deltaTime * movimentoHorizontal);
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movimentoHorizontal), 0.15f);
         }
     }
