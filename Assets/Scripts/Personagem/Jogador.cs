@@ -16,10 +16,14 @@ public class Jogador : MonoBehaviour
     Vector2 posicaoPonto, posicaoInicialPonto;
 
     Rigidbody rb;
+    Animator anima;
+
+    enum estadoMovimento { parado, andando, falando }
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        anima = transform.GetChild(0).gameObject.GetComponent<Animator>();
         posicaoInicialPonto = pontoJoystick.position;
     }
 
@@ -27,6 +31,8 @@ public class Jogador : MonoBehaviour
     {
         if (!desativarEntradas)
             Joystick();
+
+        AtualizarEstadoAnimacao();
     }
 
     void FixedUpdate()
@@ -79,5 +85,21 @@ public class Jogador : MonoBehaviour
     {
         posicaoPonto = Vector2.zero;
         pontoJoystick.position = posicaoInicialPonto;
+    }
+
+    void AtualizarEstadoAnimacao()
+    {
+        estadoMovimento estado;
+
+        if (direcaoMovimento != Vector3.zero)
+        {
+            estado = estadoMovimento.andando;
+        }
+        else
+        {
+            estado = estadoMovimento.parado;
+        }
+
+        anima.SetInteger("estado", (int)estado);
     }
 }
