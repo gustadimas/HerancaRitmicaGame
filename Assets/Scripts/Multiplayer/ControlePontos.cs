@@ -28,7 +28,7 @@ public class ControlePontos : MonoBehaviourPunCallbacks
     {
         foreach (var jogador in PhotonNetwork.PlayerList)
         {
-            int pontosP1 = 0; 
+            int pontosP1 = 50; 
             int pontosP2 = 0;
 
             if (jogador.ActorNumber == 1)

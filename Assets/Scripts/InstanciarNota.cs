@@ -40,7 +40,7 @@ public class InstanciarNota : MonoBehaviour
                     IniciarVetor(100);
                     break;
             }
-              StartCoroutine(NotaSpawnOnline());
+            StartCoroutine(NotaSpawnOnline());
         }
             
         else
@@ -74,16 +74,14 @@ public class InstanciarNota : MonoBehaviour
         {
             for (int i = 0; i < posTempoNotaOnline.Length; i++)
             {
-                yield return new WaitForSeconds(posTempoNotaOnline[i].y);
-                GameObject novaNota = Instantiate(notinhas, posicoesPossiveis[(int)(posTempoNotaOnline[i].x)].position, Quaternion.identity);
-                novaNota.transform.GetComponentInChildren<SpriteRenderer>().color = cores[(int)posTempoNotaOnline[i].x];
-                novaNota.tag = tags[(int)posTempoNotaOnline[i].x];
+                    {
+                        yield return new WaitForSeconds(posTempoNotaOnline[i].y);
+                        GameObject novaNota = Instantiate(notinhas, posicoesPossiveis[(int)(posTempoNotaOnline[i].x)].position, Quaternion.identity);
+                        novaNota.transform.GetComponentInChildren<SpriteRenderer>().color = cores[(int)posTempoNotaOnline[i].x];
+                        novaNota.tag = tags[(int)posTempoNotaOnline[i].x];
+                    }
             }
-        }
-
-        else
-        {
-            Debug.Log("cuuu");
+            
         }
     }
 
