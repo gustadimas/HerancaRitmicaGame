@@ -803,6 +803,10 @@ PrefabInstance:
       propertyPath: m_RenderMode
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6767189445427705367, guid: 4a0c8c652fd39d6429e73eed3d7879aa, type: 3}
+      propertyPath: m_PlaneDistance
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a0c8c652fd39d6429e73eed3d7879aa, type: 3}
 --- !u!1 &1012393558

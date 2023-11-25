@@ -28,7 +28,7 @@ public class ConnectToServer : MonoBehaviourPunCallbacks
 
     IEnumerator LoadingScreen()
     {
-        async = SceneManager.LoadSceneAsync("LobbyMultiplayer");
+        async = SceneManager.LoadSceneAsync("SalaMultijogador");
         async.allowSceneActivation = false;
 
         while(async.isDone == false)

@@ -48,6 +48,6 @@ public class CreateAndJoinRooms : MonoBehaviourPunCallbacks
 
     public override void OnJoinedRoom()
     {
-        PhotonNetwork.LoadLevel("Multiplayer");
+        PhotonNetwork.LoadLevel("Multijogador");
     }
 }
