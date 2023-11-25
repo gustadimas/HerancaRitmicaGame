@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class CutsceneADM : MonoBehaviour
 {
-    [SerializeField]
-    private Image[] imagens;
+    [Header("Imagens de Transição:")]
+    [SerializeField] private Image[] imagens;
 
     private int imagemAtual = 0;
 

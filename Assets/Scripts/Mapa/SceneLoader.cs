@@ -8,10 +8,10 @@ public class SceneLoader : MonoBehaviour
 {
     PlayableDirector playableDirector;
 
-    [SerializeField]
-    PlayableAsset fadeOutTimeline;
+    [Header("TimeLine:")]
+    [SerializeField] PlayableAsset fadeOutTimeline;
 
-    private void Awake()
+    void Awake()
     {
         playableDirector = GetComponent<PlayableDirector>();
     }

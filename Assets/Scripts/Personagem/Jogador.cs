@@ -62,7 +62,6 @@ public class Jogador : MonoBehaviour
 
                     pontoJoystick.position = (Vector2)joystick.position + posicaoPonto;
 
-                    // Defina a direção do movimento enquanto o dedo está se movendo
                     direcaoMovimento = (pontoJoystick.position - joystick.position).normalized;
                 }
 
@@ -92,13 +91,9 @@ public class Jogador : MonoBehaviour
         estadoMovimento estado;
 
         if (direcaoMovimento != Vector3.zero)
-        {
             estado = estadoMovimento.andando;
-        }
         else
-        {
             estado = estadoMovimento.parado;
-        }
 
         anima.SetInteger("estado", (int)estado);
     }
