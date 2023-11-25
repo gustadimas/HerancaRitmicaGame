@@ -45,7 +45,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Vitoria.unity
     guid: 3d2e4cff26d04e34fa9dc18636a4fc30
   - enabled: 1
-    path: Assets/Scenes/Multiplayer.unity
+    path: Assets/Scenes/MultiJogador.unity
     guid: c2c163437b6a3aa4ebc171ddfc558cb9
   - enabled: 1
     path: Assets/Scenes/SalaMultijogador.unity
