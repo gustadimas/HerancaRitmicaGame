@@ -39,9 +39,8 @@ public class InstanciarNota : MonoBehaviour
                     audioSource.clip = musicas[2];
                     IniciarVetor(100);
                     break;
-
             }
-            StartCoroutine(NotaSpawnOnline());
+              StartCoroutine(NotaSpawnOnline());
         }
             
         else
@@ -80,6 +79,11 @@ public class InstanciarNota : MonoBehaviour
                 novaNota.transform.GetComponentInChildren<SpriteRenderer>().color = cores[(int)posTempoNotaOnline[i].x];
                 novaNota.tag = tags[(int)posTempoNotaOnline[i].x];
             }
+        }
+
+        else
+        {
+            Debug.Log("cuuu");
         }
     }
 

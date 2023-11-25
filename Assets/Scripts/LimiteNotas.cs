@@ -11,7 +11,8 @@ public class LimiteNotas : MonoBehaviour
         if (SceneManager.GetActiveScene().name == "Multiplayer")
         {
             Destroy(other.gameObject);
-            DestruirNotas.notasDestruidas++;
+            Jogador1Controle.notasDestruidas1++;
+            Jogador2Controle.notasDestruidas2++;
             DestruirNotas.combo = 0;
         }
         else

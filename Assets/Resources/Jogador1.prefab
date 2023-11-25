@@ -67,8 +67,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8580c76f222f8bf4bbff7ebf66eeef6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mensagens:
-  - {fileID: 21300000, guid: e84a26f533c38c44bb3053345211367f, type: 3}
-  - {fileID: 21300000, guid: b9fff2222b4de604dab2275f0f59ca22, type: 3}
-  - {fileID: 21300000, guid: 3e2089c873263b546b68251300e99f8e, type: 3}
-  - {fileID: 21300000, guid: 8f32bfca3992a3f45b2e4f4179ed1474, type: 3}
