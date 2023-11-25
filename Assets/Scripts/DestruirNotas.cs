@@ -10,7 +10,6 @@ public class DestruirNotas : MonoBehaviour
     GameObject[] notasRed, notasGreen, notasPink, notasBlue;
     public static float pontos, notasDestruidas;
     Scene desafioAtual;
-    public static bool venceuJongo, venceuSussa;
     public static int combo;
     [SerializeField] Image mensagemCombo;
     [SerializeField] Sprite[] mensagens;
@@ -21,14 +20,6 @@ public class DestruirNotas : MonoBehaviour
         pontos = 50;
         notasDestruidas = 0;
         desafioAtual = SceneManager.GetActiveScene();
-        if (desafioAtual.name == "Jongo")
-        {
-            venceuJongo = false;
-        }
-        if (desafioAtual.name == "Sussa")
-        {
-            venceuSussa = false;
-        }
     }
     void Update()
     {
@@ -259,18 +250,19 @@ public class DestruirNotas : MonoBehaviour
         {
             if (desafioAtual.name == "Samba de Roda")
             {
-                SceneManager.LoadScene("Game");
+                SceneManager.LoadScene("Mapa");
+                ControladorCenas.quingoma = true;
             }
             if (desafioAtual.name == "Jongo")
             {
                 if (barra.value > 50)
                 {
-                    venceuJongo = true;
-                    SceneManager.LoadScene("Game");
+                    SceneManager.LoadScene("Mapa");
+                    ControladorCenas.quilombo1 = true;
                 }
                 else if (barra.value <= 50)
                 {
-                    SceneManager.LoadScene("Game");
+                    SceneManager.LoadScene("Quilombo1");
                 }
             }
 
@@ -278,12 +270,12 @@ public class DestruirNotas : MonoBehaviour
             {
                 if (barra.value > 50)
                 {
-                    venceuSussa = true;
-                    SceneManager.LoadScene("Game");
+                    SceneManager.LoadScene("Mapa");
+                    ControladorCenas.quilombo2 = true;
                 }
                 else if (barra.value <= 50)
                 {
-                    SceneManager.LoadScene("Game");
+                    SceneManager.LoadScene("Quilombo2");
                 }
             }
         }

@@ -20,6 +20,23 @@ public class MovimentoNota : MonoBehaviour
         {
             velocidade = 5;
         }
+        if (desafioAtual.name == "Multijogador")
+        {
+            if (InstanciarNota.audioSource.clip.name == "Jongo")
+            {
+                velocidade = 3;
+            }
+
+            if (InstanciarNota.audioSource.clip.name == "Sussa")
+            {
+                velocidade = 5;
+            }
+
+            if (InstanciarNota.audioSource.clip.name == "Samba de Roda")
+            {
+                velocidade = 2.5f;
+            }
+        }
     }
     void Update()
     {
