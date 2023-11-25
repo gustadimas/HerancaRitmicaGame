@@ -1298,6 +1298,10 @@ MonoBehaviour:
   - Green
   - Pink
   - Blue
+  musicas:
+  - {fileID: 8300000, guid: b369ad8cb9371ea46ba8003d2fd1acc3, type: 3}
+  - {fileID: 8300000, guid: deb450ce0e1faf3438c03fb4edcdcce0, type: 3}
+  - {fileID: 8300000, guid: 9f7eb56475e026e4390d853d266ef484, type: 3}
 --- !u!4 &1654296747
 Transform:
   m_ObjectHideFlags: 0
@@ -1325,10 +1329,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 805a7a824fc5c4d4c81374e6a6d94143, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  areaRed: {fileID: 0}
-  areaGreen: {fileID: 0}
-  areaPink: {fileID: 0}
-  areaBlue: {fileID: 0}
   barra: {fileID: 20140779}
   mensagemCombo: {fileID: 997558114}
   mensagens:

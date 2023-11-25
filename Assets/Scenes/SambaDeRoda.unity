@@ -1073,6 +1073,10 @@ MonoBehaviour:
   - Green
   - Pink
   - Blue
+  musicas:
+  - {fileID: 8300000, guid: b369ad8cb9371ea46ba8003d2fd1acc3, type: 3}
+  - {fileID: 8300000, guid: 9f7eb56475e026e4390d853d266ef484, type: 3}
+  - {fileID: 8300000, guid: deb450ce0e1faf3438c03fb4edcdcce0, type: 3}
 --- !u!4 &1654296747
 Transform:
   m_ObjectHideFlags: 0

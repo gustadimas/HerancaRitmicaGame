@@ -7,24 +7,24 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
-    public Slider volumeSlider;
+   // public Slider volumeSlider;
     public AudioMixer mixer;
     float value;
 
     private void Start()
     {
         mixer.GetFloat("volume", out value);
-        volumeSlider.value = value;
+      //  volumeSlider.value = value;
     }
 
     public void StartGame()
     {
-        SceneManager.LoadScene("Fase 1");
+        SceneManager.LoadScene("CutsceneInicial");
     }
 
     public void SetVolume()
     {
-        mixer.SetFloat("volume", volumeSlider.value);
+      //  mixer.SetFloat("volume", volumeSlider.value);
     }
 
     public void SairDoJogo()
@@ -35,5 +35,10 @@ public class Menu : MonoBehaviour
     public void VoltarMenu()
     {
         SceneManager.LoadScene("Menu");
+    }
+
+    public void StartOnline()
+    {
+        SceneManager.LoadScene("LoadingMultiplayer");
     }
 }

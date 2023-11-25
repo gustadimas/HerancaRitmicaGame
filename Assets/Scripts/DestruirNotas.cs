@@ -288,7 +288,6 @@ public class DestruirNotas : MonoBehaviour
             }
         }
     }
-
     void VerificarCombo()
     {
         switch (combo)
