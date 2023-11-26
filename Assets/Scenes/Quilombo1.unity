@@ -444,7 +444,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6767189444296131520, guid: 4a0c8c652fd39d6429e73eed3d7879aa, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6767189444296131522, guid: 4a0c8c652fd39d6429e73eed3d7879aa, type: 3}
       propertyPath: m_RootOrder
@@ -9330,6 +9330,14 @@ PrefabInstance:
     - target: {fileID: 8436345997248601420, guid: 9ebbec50ce51f0b4f9ef5d34ca53dee0, type: 3}
       propertyPath: m_Constraints
       value: 112
+      objectReference: {fileID: 0}
+    - target: {fileID: 8730207816157603800, guid: 9ebbec50ce51f0b4f9ef5d34ca53dee0, type: 3}
+      propertyPath: mudarCena
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8730207816157603800, guid: 9ebbec50ce51f0b4f9ef5d34ca53dee0, type: 3}
+      propertyPath: nomeCenaDestino
+      value: Quilombo2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ebbec50ce51f0b4f9ef5d34ca53dee0, type: 3}

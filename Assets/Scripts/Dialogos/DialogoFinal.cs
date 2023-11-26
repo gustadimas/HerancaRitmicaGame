@@ -7,19 +7,19 @@ public class DialogoFinal : MonoBehaviour
     [SerializeField] GameObject donaRosa;
     [SerializeField] GameObject zeMaria;
 
-    Animator animReinaldo, animDonaRosa, animZeMaria;
+    Animator[] animator = new Animator[3];
 
     private void Start()
     {
-        animReinaldo = reinaldo.transform.GetChild(0).GetComponent<Animator>();
-        animDonaRosa = donaRosa.transform.GetChild(0).GetComponent<Animator>();
-        animZeMaria = zeMaria.transform.GetChild(0).GetComponent<Animator>();
+        animator[0] = reinaldo.transform.GetChild(0).GetComponent<Animator>();
+        animator[1] = donaRosa.transform.GetChild(0).GetComponent<Animator>();
+        animator[2] = zeMaria.transform.GetChild(0).GetComponent<Animator>();
     }
 
-    private void Update()
+    public void AnimacaoFinal(int _valor)
     {
-        animReinaldo.SetInteger("estado", 2);
-        animDonaRosa.SetInteger("estado", 2);
-        animZeMaria.SetInteger("estado", 2);
+        animator[0].SetInteger("estado", _valor == 0 ? 2 : 0);
+        animator[1].SetInteger("estado", _valor == 1 ? 2 : 0);
+        animator[2].SetInteger("estado", _valor == 2 ? 2 : 0);
     }
 }

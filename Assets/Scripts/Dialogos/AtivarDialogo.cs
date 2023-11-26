@@ -16,6 +16,11 @@ public class AtivarDialogo : MonoBehaviour
 
     Animator anim;
 
+    public bool mudarCena;
+    public string nomeCenaDestino = "";
+
+    public DialogoFinal dialogoFinal;
+
     private void Awake()
     {
         anim = transform.GetChild(0).GetComponent<Animator>();
@@ -23,11 +28,13 @@ public class AtivarDialogo : MonoBehaviour
 
     private void Update()
     {
-        if (animacao)
-            anim.SetInteger("estado", 2);
-
-        else
-            anim.SetInteger("estado", 0);
+        if(dialogoFinal == null)
+        {
+            if (animacao)
+                anim.SetInteger("estado", 2);
+            else
+                anim.SetInteger("estado", 0);
+        }
     }
 
     private void OnTriggerEnter(Collider collision)
@@ -59,8 +66,15 @@ public class AtivarDialogo : MonoBehaviour
         if (controleDialogo)
         {
             animacao = true;
-            FindObjectOfType<ControladorDialogo>().AbrirDialogo(mensagens, npcs);
+            FindObjectOfType<ControladorDialogo>().AbrirDialogo(mensagens, npcs, mudarCena ? this : null, dialogoFinal ? dialogoFinal : null);
         }
+    }
+
+    public IEnumerator CarregarCenaAposDialogo()
+    {
+        yield return new WaitForSeconds(1f);
+
+        SceneManager.LoadScene(nomeCenaDestino);
     }
 }
 

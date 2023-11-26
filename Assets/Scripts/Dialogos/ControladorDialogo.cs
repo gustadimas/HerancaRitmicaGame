@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class ControladorDialogo : MonoBehaviour
 {
@@ -18,6 +19,9 @@ public class ControladorDialogo : MonoBehaviour
     int mensagemAtiva = 0;
     public static bool dialogoAtivo = false;
     public static bool comecarDialogo = false;
+    AtivarDialogo abrirDialogo = null;
+
+    DialogoFinal dialogoFinal;
 
     Jogador jogador;
 
@@ -35,8 +39,11 @@ public class ControladorDialogo : MonoBehaviour
             botaoInteragir.SetActive(false);
     }
 
-    public void AbrirDialogo(Mensagem[] mensagens, NPC[] npcs)
+    public void AbrirDialogo(Mensagem[] mensagens, NPC[] npcs, AtivarDialogo _abrirDialogo, DialogoFinal _dialogoFinal)
     {
+        dialogoFinal = _dialogoFinal;
+        //_dialogoFinal?.AnimacaoFinal();
+        abrirDialogo = _abrirDialogo;
         npcAtual = npcs;
         mensagemAtual = mensagens;
         mensagemAtiva = 0;
@@ -60,6 +67,7 @@ public class ControladorDialogo : MonoBehaviour
             textoMensagem.text = mostrarMensagem.mensagens;
 
             NPC npcParaMostrar = npcAtual[mostrarMensagem.npcID];
+            dialogoFinal?.AnimacaoFinal(mostrarMensagem.npcID);
             npcNome.text = npcParaMostrar.nome;
             npcImage.sprite = npcParaMostrar.sprite;
 
@@ -80,6 +88,13 @@ public class ControladorDialogo : MonoBehaviour
             print("O Diálogo Acabou!");
             backgroundCaixa.LeanScale(Vector3.zero, 0.5f).setEaseInOutExpo();
             dialogoAtivo = false;
+
+
+            if (abrirDialogo != null)
+            {
+                print("Entrou na Coroutine");
+                StartCoroutine(abrirDialogo.CarregarCenaAposDialogo());
+            }
         }
     }
 

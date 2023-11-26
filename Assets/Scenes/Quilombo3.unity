@@ -563,8 +563,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1912920418958320156, guid: 1662963716a85d34da5b75ed98885c4b, type: 3}
+      propertyPath: dialogoFinal
+      value: 
+      objectReference: {fileID: 215500919}
+    - target: {fileID: 1912920418958320156, guid: 1662963716a85d34da5b75ed98885c4b, type: 3}
       propertyPath: npcs.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1912920418958320156, guid: 1662963716a85d34da5b75ed98885c4b, type: 3}
       propertyPath: mensagens.Array.size
@@ -579,6 +583,10 @@ PrefabInstance:
       value: "Z\xE9 Maria"
       objectReference: {fileID: 0}
     - target: {fileID: 1912920418958320156, guid: 1662963716a85d34da5b75ed98885c4b, type: 3}
+      propertyPath: npcs.Array.data[3].nome
+      value: Amina
+      objectReference: {fileID: 0}
+    - target: {fileID: 1912920418958320156, guid: 1662963716a85d34da5b75ed98885c4b, type: 3}
       propertyPath: npcs.Array.data[1].sprite
       value: 
       objectReference: {fileID: 21300000, guid: e7b30aeff780bc044ac584cc46e7ad3d, type: 3}
@@ -586,6 +594,10 @@ PrefabInstance:
       propertyPath: npcs.Array.data[2].sprite
       value: 
       objectReference: {fileID: 21300000, guid: 765f98eb58e1b1e49b8e0dc2f345f260, type: 3}
+    - target: {fileID: 1912920418958320156, guid: 1662963716a85d34da5b75ed98885c4b, type: 3}
+      propertyPath: npcs.Array.data[3].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e902e08e0a4b3fb4db255251d06ea2cd, type: 3}
     - target: {fileID: 1912920418958320156, guid: 1662963716a85d34da5b75ed98885c4b, type: 3}
       propertyPath: mensagens.Array.data[2].npcID
       value: 2
@@ -3419,38 +3431,22 @@ PrefabInstance:
       propertyPath: m_TagString
       value: NPC
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 7684021116020873055, guid: 9ebbec50ce51f0b4f9ef5d34ca53dee0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.01401009
+      objectReference: {fileID: 0}
+    - target: {fileID: 7684021116020873055, guid: 9ebbec50ce51f0b4f9ef5d34ca53dee0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.030694159
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8730207816157603800, guid: 9ebbec50ce51f0b4f9ef5d34ca53dee0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9ebbec50ce51f0b4f9ef5d34ca53dee0, type: 3}
 --- !u!1 &619951290 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3277304734783988535, guid: 9ebbec50ce51f0b4f9ef5d34ca53dee0, type: 3}
   m_PrefabInstance: {fileID: 619951289}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &619951291
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 619951290}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c43a6c3c8a2f14e41badbf774d88fb1f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mensagens:
-  - npcID: 0
-    mensagens: coco
-  - npcID: 1
-    mensagens: bosta
-  npcs:
-  - nome: Dona Rosa
-    sprite: {fileID: 21300000, guid: e7b30aeff780bc044ac584cc46e7ad3d, type: 3}
-  - nome: Amina
-    sprite: {fileID: 21300000, guid: e902e08e0a4b3fb4db255251d06ea2cd, type: 3}
-  controleDialogo: 0
-  animacao: 0
-  CaixaDeDialogo: {fileID: 0}
 --- !u!1001 &661638463
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6281,7 +6277,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8372745055609893891, guid: c2766ec5118ba784ca517cbe5bd7a8f0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c2766ec5118ba784ca517cbe5bd7a8f0, type: 3}
 --- !u!1001 &1378653879
 PrefabInstance:
@@ -9375,7 +9372,7 @@ PrefabInstance:
       objectReference: {fileID: 899478181}
     - target: {fileID: 290398000698241552, guid: c504034ff0d9ee542822a35fd34f73e8, type: 3}
       propertyPath: velocidadeMovimento
-      value: 1.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3687828025052958299, guid: c504034ff0d9ee542822a35fd34f73e8, type: 3}
       propertyPath: m_RootOrder
@@ -9391,7 +9388,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3687828025052958299, guid: c504034ff0d9ee542822a35fd34f73e8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 11.2
+      value: 22.73
       objectReference: {fileID: 0}
     - target: {fileID: 3687828025052958299, guid: c504034ff0d9ee542822a35fd34f73e8, type: 3}
       propertyPath: m_LocalRotation.w
