@@ -37,7 +37,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 6
-    m_ConditionEvent: estadoJuca
+    m_ConditionEvent: estado
     m_EventTreshold: 1
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -9033215457113523368}
@@ -62,7 +62,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 6
-    m_ConditionEvent: estadoJuca
+    m_ConditionEvent: estado
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 5694409086459565358}
@@ -115,7 +115,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 6
-    m_ConditionEvent: estadoJuca
+    m_ConditionEvent: estado
     m_EventTreshold: 1
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -9033215457113523368}
@@ -168,7 +168,7 @@ AnimatorController:
   m_Name: Anims_Juca
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: estadoJuca
+  - m_Name: estado
     m_Type: 3
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -196,7 +196,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 6
-    m_ConditionEvent: estadoJuca
+    m_ConditionEvent: estado
     m_EventTreshold: 2
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -1225808347728889579}
@@ -221,7 +221,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 6
-    m_ConditionEvent: estadoJuca
+    m_ConditionEvent: estado
     m_EventTreshold: 2
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -1225808347728889579}
@@ -274,7 +274,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 6
-    m_ConditionEvent: estadoJuca
+    m_ConditionEvent: estado
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 5694409086459565358}

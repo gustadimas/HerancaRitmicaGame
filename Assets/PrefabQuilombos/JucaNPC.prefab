@@ -11,7 +11,9 @@ GameObject:
   - component: {fileID: 1154275147986942983}
   - component: {fileID: 1154275147986942984}
   - component: {fileID: 1154275147986942980}
+  - component: {fileID: 1877513216473534551}
   - component: {fileID: 2730554414193835170}
+  - component: {fileID: 1576409347227658048}
   m_Layer: 0
   m_Name: JucaNPC
   m_TagString: Untagged
@@ -57,7 +59,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1154275147986942987}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 10000
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -65,6 +67,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &1877513216473534551
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1154275147986942987}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.9604263, y: 2.262345, z: 4.8830566}
+  m_Center: {x: -0.07083511, y: 0.33474302, z: 0.18129921}
 --- !u!195 &2730554414193835170
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -87,6 +102,31 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &1576409347227658048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1154275147986942987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c43a6c3c8a2f14e41badbf774d88fb1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mensagens:
+  - npcID: 0
+    mensagens: merda
+  - npcID: 1
+    mensagens: pica
+  npcs:
+  - nome: Juca
+    sprite: {fileID: 21300000, guid: 02dfb0cb4e134994a965284601975b98, type: 3}
+  - nome: Amina
+    sprite: {fileID: 21300000, guid: e902e08e0a4b3fb4db255251d06ea2cd, type: 3}
+  controleDialogo: 0
+  animacao: 0
+  CaixaDeDialogo: {fileID: 0}
 --- !u!1001 &7535038649446756202
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -1,5 +1,5 @@
-using UnityEngine;
 using System.Collections;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class InstanciarNota : MonoBehaviour
@@ -15,36 +15,44 @@ public class InstanciarNota : MonoBehaviour
     public static bool comecou;
     Vector2[] posTempoNotaOnline;
 
+    static int desafio;
+
     void Start()
     {
+        desafio = Random.Range(0, 3);
+
         audioSource = GetComponent<AudioSource>();
         cena = SceneManager.GetActiveScene();
         if (cena.name == "Multijogador")
         {
-            int desafioAleatorio = Random.Range(0,3);
-            
-            switch (desafioAleatorio)
-            {
-                case 0:
-                    audioSource.clip = musicas[0];
-                    IniciarVetor(330);
-                    break;
-
-                case 1:
-                    audioSource.clip = musicas[1];
-                    IniciarVetor(100);
-                    break;
-
-                case 2:
-                    audioSource.clip = musicas[2];
-                    IniciarVetor(100);
-                    break;
-            }
             StartCoroutine(NotaSpawnOnline());
         }
-            
+
         else
             StartCoroutine(NotaSpawn());
+    }
+
+    private void SelecionarMusica()
+    {
+        switch (desafio)
+        {
+            case 0:
+                audioSource.clip = musicas[0];
+                IniciarVetor(330);
+                break;
+
+            case 1:
+                audioSource.clip = musicas[1];
+                IniciarVetor(100);
+                break;
+
+            case 2:
+                audioSource.clip = musicas[2];
+                IniciarVetor(100);
+                break;
+        }
+
+        audioSource.Play();
     }
 
     void IniciarVetor(int tamanho)
@@ -59,29 +67,30 @@ public class InstanciarNota : MonoBehaviour
     }
     IEnumerator NotaSpawn()
     {
-        for(int i = 0; i < posTempoNota.Length; i++)
+        for (int i = 0; i < posTempoNota.Length; i++)
         {
             yield return new WaitForSeconds(posTempoNota[i].y);
             GameObject novaNota = Instantiate(notinhas, posicoesPossiveis[(int)(posTempoNota[i].x)].position, Quaternion.identity);
             novaNota.transform.GetComponentInChildren<SpriteRenderer>().color = cores[(int)posTempoNota[i].x];
             novaNota.tag = tags[(int)posTempoNota[i].x];
-        }        
+        }
     }
 
     IEnumerator NotaSpawnOnline()
     {
-        if (comecou)
+        Debug.LogError("Ainda não foi!");
+        yield return new WaitUntil(() => comecou);
+
+        Debug.LogError("Já foi!");
+
+        SelecionarMusica();
+
+        for (int i = 0; i < posTempoNotaOnline.Length; i++)
         {
-            for (int i = 0; i < posTempoNotaOnline.Length; i++)
-            {
-                    {
-                        yield return new WaitForSeconds(posTempoNotaOnline[i].y);
-                        GameObject novaNota = Instantiate(notinhas, posicoesPossiveis[(int)(posTempoNotaOnline[i].x)].position, Quaternion.identity);
-                        novaNota.transform.GetComponentInChildren<SpriteRenderer>().color = cores[(int)posTempoNotaOnline[i].x];
-                        novaNota.tag = tags[(int)posTempoNotaOnline[i].x];
-                    }
-            }
-            
+            yield return new WaitForSeconds(posTempoNotaOnline[i].y);
+            GameObject novaNota = Instantiate(notinhas, posicoesPossiveis[(int)(posTempoNotaOnline[i].x)].position, Quaternion.identity);
+            novaNota.transform.GetComponentInChildren<SpriteRenderer>().color = cores[(int)posTempoNotaOnline[i].x];
+            novaNota.tag = tags[(int)posTempoNotaOnline[i].x];
         }
     }
 
@@ -96,5 +105,4 @@ public class InstanciarNota : MonoBehaviour
             posTempoNota[i].x = Random.Range(0, 4);
         }
     }
-        
 }

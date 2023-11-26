@@ -25,7 +25,7 @@ public class ControladorCenas : MonoBehaviour
 
     public void Quilombo3_Mapa()
     {
-        SceneManager.LoadScene("Mapa");
+        SceneManager.LoadScene("Quilombo3");
         quilombo3 = true;
     }
 }

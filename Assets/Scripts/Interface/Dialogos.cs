@@ -8,7 +8,7 @@ public class Dialogos : MonoBehaviour
     [SerializeField] TextMeshProUGUI textoDialogo;
     [SerializeField] string[] falas;
     [SerializeField] float delayEntreLetras;
-    [SerializeField] GameObject CaixaDeDialogo;
+    [SerializeField] public RectTransform backgroundCaixa;
 
     NavMeshAgent npcNavMeshAgent;
     bool dialogoAtivo = false;
@@ -17,7 +17,7 @@ public class Dialogos : MonoBehaviour
     void Start()
     {
         npcNavMeshAgent = transform.parent.GetComponent<NavMeshAgent>();
-        CaixaDeDialogo.SetActive(false);
+        backgroundCaixa.transform.localScale = Vector3.zero;
         textoDialogo.text = "";
     }
 
@@ -50,7 +50,6 @@ public class Dialogos : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             npcNavMeshAgent.isStopped = true;
-            CaixaDeDialogo.SetActive(true);
             index = 0;
             IniciarDialogo();
         }
@@ -61,7 +60,6 @@ public class Dialogos : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             npcNavMeshAgent.isStopped = false;
-            CaixaDeDialogo.SetActive(false);
             dialogoAtivo = false;
             index = 0;
         }
@@ -81,15 +79,22 @@ public class Dialogos : MonoBehaviour
     void IniciarDialogo()
     {
         dialogoAtivo = true;
+        backgroundCaixa.LeanScale(Vector3.one, 0.5f);
         StartCoroutine(TipoDeFala(falas[index]));
     }
 
     void FinalizarDialogo()
     {
         npcNavMeshAgent.isStopped = false;
-        CaixaDeDialogo.SetActive(false);
+        backgroundCaixa.LeanScale(Vector3.zero, 0.5f).setEaseInOutExpo();
         dialogoAtivo = false;
         index = 0;
         gameObject.SetActive(false);
+    }
+
+    void CorDoTextoAnimado()
+    {
+        LeanTween.textAlpha(textoDialogo.rectTransform, 0, 0);
+        LeanTween.textAlpha(textoDialogo.rectTransform, 1, 0.5f);
     }
 }

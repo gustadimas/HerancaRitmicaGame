@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 7412323733435331745}
   - component: {fileID: 7412323733435331750}
   - component: {fileID: 7412323733435331751}
+  - component: {fileID: 3878540319696077465}
+  - component: {fileID: 1912920418958320156}
   m_Layer: 0
   m_Name: ReinaldoNPC
   m_TagString: Untagged
@@ -56,14 +58,52 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7412323733435331748}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 10000
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!65 &3878540319696077465
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7412323733435331748}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.260424, y: 3.8570418, z: 4.1380625}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1912920418958320156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7412323733435331748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c43a6c3c8a2f14e41badbf774d88fb1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mensagens:
+  - npcID: 0
+    mensagens: Falando
+  - npcID: 1
+    mensagens: Falando
+  npcs:
+  - nome: Reinaldo
+    sprite: {fileID: 21300000, guid: edd52bc2ec19eb44b85433c41234bfaf, type: 3}
+  - nome: Amina
+    sprite: {fileID: 21300000, guid: e902e08e0a4b3fb4db255251d06ea2cd, type: 3}
+  controleDialogo: 0
+  animacao: 0
+  CaixaDeDialogo: {fileID: 0}
 --- !u!1001 &3171040944364889412
 PrefabInstance:
   m_ObjectHideFlags: 0

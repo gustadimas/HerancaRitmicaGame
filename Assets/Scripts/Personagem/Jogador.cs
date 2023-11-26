@@ -1,6 +1,8 @@
 using TMPro;
 using UnityEngine;
 
+public enum estadoMovimento { parado, andando, falando }
+
 public class Jogador : MonoBehaviour
 {
     [Header("Configurações:")]
@@ -18,17 +20,24 @@ public class Jogador : MonoBehaviour
     Rigidbody rb;
     Animator anima;
 
-    enum estadoMovimento { parado, andando, falando }
+    //AtivarDialogo dialogo;
+
+    estadoMovimento estado;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         anima = transform.GetChild(0).gameObject.GetComponent<Animator>();
         posicaoInicialPonto = pontoJoystick.position;
+
+        //dialogo = FindObjectOfType<AtivarDialogo>();
     }
 
     void Update()
     {
+        if (ControladorDialogo.dialogoAtivo)
+            return;
+
         if (!desativarEntradas)
             Joystick();
 
@@ -88,13 +97,18 @@ public class Jogador : MonoBehaviour
 
     void AtualizarEstadoAnimacao()
     {
-        estadoMovimento estado;
-
         if (direcaoMovimento != Vector3.zero)
             estado = estadoMovimento.andando;
-        else
+
+        else if(direcaoMovimento == Vector3.zero)
             estado = estadoMovimento.parado;
 
         anima.SetInteger("estado", (int)estado);
+    }
+
+    public void AlterarEstadoAnimacao(estadoMovimento _estado)
+    {
+        estado = _estado;
+        anima.SetInteger("estado", 2);
     }
 }

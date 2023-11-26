@@ -9,7 +9,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 6
-    m_ConditionEvent: estadoDonaRosa
+    m_ConditionEvent: estado
     m_EventTreshold: 2
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 3430423259891598334}
@@ -34,7 +34,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 6
-    m_ConditionEvent: estadoDonaRosa
+    m_ConditionEvent: estado
     m_EventTreshold: 2
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 3430423259891598334}
@@ -59,7 +59,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 6
-    m_ConditionEvent: estadoDonaRosa
+    m_ConditionEvent: estado
     m_EventTreshold: 1
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -4952442961446303843}
@@ -112,7 +112,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 6
-    m_ConditionEvent: estadoDonaRosa
+    m_ConditionEvent: estado
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 7908050397513385310}
@@ -137,7 +137,7 @@ AnimatorController:
   m_Name: Anims_DonaRosa
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: estadoDonaRosa
+  - m_Name: estado
     m_Type: 3
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -193,7 +193,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 6
-    m_ConditionEvent: estadoDonaRosa
+    m_ConditionEvent: estado
     m_EventTreshold: 1
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -4952442961446303843}
@@ -246,8 +246,8 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 6
-    m_ConditionEvent: estadoDonaRosa
-    m_EventTreshold: 1
+    m_ConditionEvent: estado
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 7908050397513385310}
   m_Solo: 0

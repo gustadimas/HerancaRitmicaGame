@@ -10,7 +10,8 @@ public class ControladorDialogo : MonoBehaviour
     [SerializeField] Image npcImage;
     [SerializeField] TextMeshProUGUI npcNome;
     [SerializeField] TextMeshProUGUI textoMensagem;
-    [HideInInspector] public RectTransform backgroundCaixa;
+    [SerializeField] public RectTransform backgroundCaixa;
+    [SerializeField] GameObject botaoInteragir;
 
     Mensagem[] mensagemAtual;
     NPC[] npcAtual;
@@ -18,9 +19,20 @@ public class ControladorDialogo : MonoBehaviour
     public static bool dialogoAtivo = false;
     public static bool comecarDialogo = false;
 
+    Jogador jogador;
+
     void Start()
     {
         backgroundCaixa.transform.localScale = Vector3.zero;
+        jogador = FindObjectOfType<Jogador>();
+    }
+
+    private void Update()
+    {
+        if (AtivarDialogo.dialogoCollider)
+            botaoInteragir.SetActive(true);
+        else
+            botaoInteragir.SetActive(false);
     }
 
     public void AbrirDialogo(Mensagem[] mensagens, NPC[] npcs)
@@ -29,6 +41,7 @@ public class ControladorDialogo : MonoBehaviour
         mensagemAtual = mensagens;
         mensagemAtiva = 0;
         dialogoAtivo = true;
+        jogador.AlterarEstadoAnimacao(estadoMovimento.falando);
 
         print("O Diálogo Começou! Mensagens Carregadas: " + mensagens.Length);
 
@@ -38,6 +51,7 @@ public class ControladorDialogo : MonoBehaviour
 
         backgroundCaixa.LeanScale(Vector3.one, 0.5f);
     }
+
     private void MensagemTela()
     {
         if (mensagemAtiva < mensagemAtual.Length)
@@ -58,8 +72,9 @@ public class ControladorDialogo : MonoBehaviour
         mensagemAtiva++;
 
         if (mensagemAtiva < mensagemAtual.Length)
+        {
             MensagemTela();
-
+        }
         else
         {
             print("O Diálogo Acabou!");
@@ -74,9 +89,16 @@ public class ControladorDialogo : MonoBehaviour
         LeanTween.textAlpha(textoMensagem.rectTransform, 1, 0.5f);
     }
 
-    void Update()
+    public void BotaoDialogo()
     {
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began && dialogoAtivo == true)
-            ProximaMensagem();
+        if (AtivarDialogo.dialogoCollider)
+        {
+            GameObject[] _npcs = GameObject.FindGameObjectsWithTag("NPC");
+
+            foreach(GameObject _npc in _npcs)
+            {
+                _npc.GetComponent<AtivarDialogo>()?.ComecarDialogo();
+            }
+        }
     }
 }
