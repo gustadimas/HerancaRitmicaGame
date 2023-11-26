@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class Jogador1Controle : MonoBehaviourPunCallbacks
 {
@@ -41,11 +42,22 @@ public class Jogador1Controle : MonoBehaviourPunCallbacks
                             Collider redCol = vermelho.GetComponent<Collider>();
                             if (hit.collider.bounds.Intersects(redCol.bounds))
                             {
-                                PhotonNetwork.LocalPlayer.AddScore(1);
-                                notasDestruidas1++;
-                                combo++;
-                                Destroy(vermelho);
+                                if (PhotonNetwork.LocalPlayer.GetScore() < 50)
+                                {
+                                    PhotonNetwork.LocalPlayer.AddScore(50);
+                                    notasDestruidas1++;
+                                    combo++;
+                                    Destroy(vermelho);
+                                }
+                                else
+                                {
+                                    PhotonNetwork.LocalPlayer.AddScore(1);
+                                    notasDestruidas1++;
+                                    combo++;
+                                    Destroy(vermelho);
+                                }
                             }
+                            
                         }
 
                     }
@@ -57,10 +69,20 @@ public class Jogador1Controle : MonoBehaviourPunCallbacks
                             Collider greenCol = verde.GetComponent<Collider>();
                             if (hit.collider.bounds.Intersects(greenCol.bounds))
                             {
-                                PhotonNetwork.LocalPlayer.AddScore(1);
-                                notasDestruidas1++;
-                                combo++;
-                                Destroy(verde);
+                                if (PhotonNetwork.LocalPlayer.GetScore() < 50)
+                                {
+                                    PhotonNetwork.LocalPlayer.AddScore(50);
+                                    notasDestruidas1++;
+                                    combo++;
+                                    Destroy(verde);
+                                }
+                                else
+                                {
+                                    PhotonNetwork.LocalPlayer.AddScore(1);
+                                    notasDestruidas1++;
+                                    combo++;
+                                    Destroy(verde);
+                                }
                             }
                         }
                     }
@@ -72,10 +94,20 @@ public class Jogador1Controle : MonoBehaviourPunCallbacks
                             Collider pinkCol = rosa.GetComponent<Collider>();
                             if (hit.collider.bounds.Intersects(pinkCol.bounds))
                             {
-                                PhotonNetwork.LocalPlayer.AddScore(1);
-                                notasDestruidas1++;
-                                combo++;
-                                Destroy(rosa);
+                                if (PhotonNetwork.LocalPlayer.GetScore() < 50)
+                                {
+                                    PhotonNetwork.LocalPlayer.AddScore(50);
+                                    notasDestruidas1++;
+                                    combo++;
+                                    Destroy(rosa);
+                                }
+                                else
+                                {
+                                    PhotonNetwork.LocalPlayer.AddScore(1);
+                                    notasDestruidas1++;
+                                    combo++;
+                                    Destroy(rosa);
+                                }
                             }
                         }
                     }
@@ -87,10 +119,20 @@ public class Jogador1Controle : MonoBehaviourPunCallbacks
                             Collider blueCol = azul.GetComponent<Collider>();
                             if (hit.collider.bounds.Intersects(blueCol.bounds))
                             {
-                                PhotonNetwork.LocalPlayer.AddScore(1);
-                                notasDestruidas1++;
-                                combo++;
-                                Destroy(azul);
+                                if (PhotonNetwork.LocalPlayer.GetScore() < 50)
+                                {
+                                    PhotonNetwork.LocalPlayer.AddScore(50);
+                                    notasDestruidas1++;
+                                    combo++;
+                                    Destroy(azul);
+                                }
+                                else
+                                {
+                                    PhotonNetwork.LocalPlayer.AddScore(1);
+                                    notasDestruidas1++;
+                                    combo++;
+                                    Destroy(azul);
+                                }
                             }
                         }
                     }
@@ -110,9 +152,20 @@ public class Jogador1Controle : MonoBehaviourPunCallbacks
                             Collider redCol = vermelho.GetComponent<Collider>();
                             if (hit.collider.bounds.Intersects(redCol.bounds))
                             {
-                                PhotonNetwork.LocalPlayer.AddScore(1);
-                                notasDestruidas1++;
-                                Destroy(vermelho);
+                                if (PhotonNetwork.LocalPlayer.GetScore() < 50)
+                                {
+                                    PhotonNetwork.LocalPlayer.AddScore(50);
+                                    notasDestruidas1++;
+                                    combo++;
+                                    Destroy(vermelho);
+                                }
+                                else
+                                {
+                                    PhotonNetwork.LocalPlayer.AddScore(1);
+                                    notasDestruidas1++;
+                                    combo++;
+                                    Destroy(vermelho);
+                                }
                             }
                         }
 
@@ -125,9 +178,20 @@ public class Jogador1Controle : MonoBehaviourPunCallbacks
                             Collider greenCol = verde.GetComponent<Collider>();
                             if (hit.collider.bounds.Intersects(greenCol.bounds))
                             {
-                                PhotonNetwork.LocalPlayer.AddScore(1);
-                                notasDestruidas1++;
-                                Destroy(verde);
+                                if (PhotonNetwork.LocalPlayer.GetScore() < 50)
+                                {
+                                    PhotonNetwork.LocalPlayer.AddScore(50);
+                                    notasDestruidas1++;
+                                    combo++;
+                                    Destroy(verde);
+                                }
+                                else
+                                {
+                                    PhotonNetwork.LocalPlayer.AddScore(1);
+                                    notasDestruidas1++;
+                                    combo++;
+                                    Destroy(verde);
+                                }
                             }
                         }
                     }
@@ -139,9 +203,20 @@ public class Jogador1Controle : MonoBehaviourPunCallbacks
                             Collider pinkCol = rosa.GetComponent<Collider>();
                             if (hit.collider.bounds.Intersects(pinkCol.bounds))
                             {
-                                PhotonNetwork.LocalPlayer.AddScore(1);
-                                notasDestruidas1++;
-                                Destroy(rosa);
+                                if (PhotonNetwork.LocalPlayer.GetScore() < 50)
+                                {
+                                    PhotonNetwork.LocalPlayer.AddScore(50);
+                                    notasDestruidas1++;
+                                    combo++;
+                                    Destroy(rosa);
+                                }
+                                else
+                                {
+                                    PhotonNetwork.LocalPlayer.AddScore(1);
+                                    notasDestruidas1++;
+                                    combo++;
+                                    Destroy(rosa);
+                                }
                             }
                         }
                     }
@@ -153,9 +228,20 @@ public class Jogador1Controle : MonoBehaviourPunCallbacks
                             Collider blueCol = azul.GetComponent<Collider>();
                             if (hit.collider.bounds.Intersects(blueCol.bounds))
                             {
-                                PhotonNetwork.LocalPlayer.AddScore(1);
-                                notasDestruidas1++;
-                                Destroy(azul);
+                                if (PhotonNetwork.LocalPlayer.GetScore() < 50)
+                                {
+                                    PhotonNetwork.LocalPlayer.AddScore(50);
+                                    notasDestruidas1++;
+                                    combo++;
+                                    Destroy(azul);
+                                }
+                                else
+                                {
+                                    PhotonNetwork.LocalPlayer.AddScore(1);
+                                    notasDestruidas1++;
+                                    combo++;
+                                    Destroy(azul);
+                                }
                             }
                         }
                     }
@@ -171,9 +257,20 @@ public class Jogador1Controle : MonoBehaviourPunCallbacks
                                 Collider redCol = vermelho.GetComponent<Collider>();
                                 if (hit2.collider.bounds.Intersects(redCol.bounds))
                                 {
-                                    PhotonNetwork.LocalPlayer.AddScore(1);
-                                    notasDestruidas1++;
-                                    Destroy(vermelho);
+                                    if (PhotonNetwork.LocalPlayer.GetScore() < 50)
+                                    {
+                                        PhotonNetwork.LocalPlayer.AddScore(50);
+                                        notasDestruidas1++;
+                                        combo++;
+                                        Destroy(vermelho);
+                                    }
+                                    else
+                                    {
+                                        PhotonNetwork.LocalPlayer.AddScore(1);
+                                        notasDestruidas1++;
+                                        combo++;
+                                        Destroy(vermelho);
+                                    }
                                 }
                             }
 
@@ -186,9 +283,20 @@ public class Jogador1Controle : MonoBehaviourPunCallbacks
                                 Collider greenCol = verde.GetComponent<Collider>();
                                 if (hit2.collider.bounds.Intersects(greenCol.bounds))
                                 {
-                                    PhotonNetwork.LocalPlayer.AddScore(1);
-                                    notasDestruidas1++;
-                                    Destroy(verde);
+                                    if (PhotonNetwork.LocalPlayer.GetScore() < 50)
+                                    {
+                                        PhotonNetwork.LocalPlayer.AddScore(50);
+                                        notasDestruidas1++;
+                                        combo++;
+                                        Destroy(verde);
+                                    }
+                                    else
+                                    {
+                                        PhotonNetwork.LocalPlayer.AddScore(1);
+                                        notasDestruidas1++;
+                                        combo++;
+                                        Destroy(verde);
+                                    }
                                 }
                             }
                         }
@@ -200,9 +308,20 @@ public class Jogador1Controle : MonoBehaviourPunCallbacks
                                 Collider pinkCol = rosa.GetComponent<Collider>();
                                 if (hit2.collider.bounds.Intersects(pinkCol.bounds))
                                 {
-                                    PhotonNetwork.LocalPlayer.AddScore(1);
-                                    notasDestruidas1++;
-                                    Destroy(rosa);
+                                    if (PhotonNetwork.LocalPlayer.GetScore() < 50)
+                                    {
+                                        PhotonNetwork.LocalPlayer.AddScore(50);
+                                        notasDestruidas1++;
+                                        combo++;
+                                        Destroy(rosa);
+                                    }
+                                    else
+                                    {
+                                        PhotonNetwork.LocalPlayer.AddScore(1);
+                                        notasDestruidas1++;
+                                        combo++;
+                                        Destroy(rosa);
+                                    }
                                 }
                             }
                         }
@@ -214,9 +333,20 @@ public class Jogador1Controle : MonoBehaviourPunCallbacks
                                 Collider blueCol = azul.GetComponent<Collider>();
                                 if (hit2.collider.bounds.Intersects(blueCol.bounds))
                                 {
-                                    PhotonNetwork.LocalPlayer.AddScore(1);
-                                    notasDestruidas1++;
-                                    Destroy(azul);
+                                    if(PhotonNetwork.LocalPlayer.GetScore() < 50)
+                                {
+                                        PhotonNetwork.LocalPlayer.AddScore(50);
+                                        notasDestruidas1++;
+                                        combo++;
+                                        Destroy(azul);
+                                    }
+                                else
+                                    {
+                                        PhotonNetwork.LocalPlayer.AddScore(1);
+                                        notasDestruidas1++;
+                                        combo++;
+                                        Destroy(azul);
+                                    }
                                 }
                             }
                         }

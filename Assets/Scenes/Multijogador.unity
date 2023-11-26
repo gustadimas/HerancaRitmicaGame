@@ -312,7 +312,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &634535417
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1628,8 +1628,6 @@ MonoBehaviour:
   - Pink
   - Blue
   musicas:
-  - {fileID: 8300000, guid: b369ad8cb9371ea46ba8003d2fd1acc3, type: 3}
-  - {fileID: 8300000, guid: 9f7eb56475e026e4390d853d266ef484, type: 3}
   - {fileID: 8300000, guid: deb450ce0e1faf3438c03fb4edcdcce0, type: 3}
 --- !u!4 &1654296747
 Transform:
@@ -2033,7 +2031,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.2264151, g: 0.2264151, b: 0.2264151, a: 1}
+  m_Color: {r: 1, g: 0.89199054, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

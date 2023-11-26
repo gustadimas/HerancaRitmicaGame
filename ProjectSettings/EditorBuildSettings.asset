@@ -39,11 +39,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Sussa.unity
     guid: dff6d272bf6515e46af2d6d56382eb56
   - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: 2c59c4c0d2dc9d8419c674fd1724361e
+  - enabled: 1
     path: Assets/Scenes/CarregandoMultijogador.unity
     guid: 43b6543dc3bc62b4b89c39e8807ad4c2
-  - enabled: 1
-    path: Assets/Scenes/Vitoria.unity
-    guid: 3d2e4cff26d04e34fa9dc18636a4fc30
   - enabled: 1
     path: Assets/Scenes/Multijogador.unity
     guid: c2c163437b6a3aa4ebc171ddfc558cb9

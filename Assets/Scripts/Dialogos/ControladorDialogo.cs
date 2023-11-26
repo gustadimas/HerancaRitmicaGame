@@ -27,6 +27,7 @@ public class ControladorDialogo : MonoBehaviour
 
     void Start()
     {
+        botaoInteragir.SetActive(false);
         backgroundCaixa.transform.localScale = Vector3.zero;
         jogador = FindObjectOfType<Jogador>();
     }

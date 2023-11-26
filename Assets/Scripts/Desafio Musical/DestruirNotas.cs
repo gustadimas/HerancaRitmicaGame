@@ -39,6 +39,10 @@ public class DestruirNotas : MonoBehaviour
         notasPink = GameObject.FindGameObjectsWithTag("Pink");
         notasBlue = GameObject.FindGameObjectsWithTag("Blue");
         barra.value = pontos;
+        if (pontos > 100)
+        {
+            pontos = 100;
+        }
         if (Input.touchCount == 1)
         {
             Ray raio = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
@@ -298,7 +302,7 @@ public class DestruirNotas : MonoBehaviour
         {
             if (barra.value > 50)
             {
-                SceneManager.LoadScene("Mapa");
+                SceneManager.LoadScene("Quilombo3");
                 ControladorCenas.quilombo3 = true;
             }
             else if (barra.value <= 50)

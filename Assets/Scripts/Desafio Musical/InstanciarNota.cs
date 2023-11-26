@@ -12,15 +12,13 @@ public class InstanciarNota : MonoBehaviour
     Scene cena;
     public static AudioSource audioSource;
     [SerializeField] AudioClip[] musicas;
-    public static bool comecou;
+    public static bool comecou, musicaTocando;
     Vector2[] posTempoNotaOnline;
-
-    static int desafio;
+    
 
     void Start()
     {
-        desafio = Random.Range(0, 3);
-
+        musicaTocando = false;
         audioSource = GetComponent<AudioSource>();
         cena = SceneManager.GetActiveScene();
         if (cena.name == "Multijogador")
@@ -34,25 +32,11 @@ public class InstanciarNota : MonoBehaviour
 
     private void SelecionarMusica()
     {
-        switch (desafio)
-        {
-            case 0:
-                audioSource.clip = musicas[0];
-                IniciarVetor(330);
-                break;
-
-            case 1:
-                audioSource.clip = musicas[1];
-                IniciarVetor(100);
-                break;
-
-            case 2:
-                audioSource.clip = musicas[2];
-                IniciarVetor(100);
-                break;
-        }
+        audioSource.clip = musicas[0];
+        IniciarVetor(68);
 
         audioSource.Play();
+        musicaTocando = true;
     }
 
     void IniciarVetor(int tamanho)
@@ -61,7 +45,7 @@ public class InstanciarNota : MonoBehaviour
 
         for (int i = 0; i < tamanho; i++)
         {
-            posTempoNotaOnline[i].y = Random.Range(0f, 1f);
+            posTempoNotaOnline[i].y = Random.Range(0.5f, 1f);
             posTempoNotaOnline[i].x = Random.Range(0, 4);
         }
     }
@@ -101,7 +85,7 @@ public class InstanciarNota : MonoBehaviour
     {
         for (int i = 0; i <= posTempoNota.Length; i++)
         {
-            posTempoNota[i].y = Random.Range(0f, 1f);
+            posTempoNota[i].y = Random.Range(0.5f, 1f);
             posTempoNota[i].x = Random.Range(0, 4);
         }
     }

@@ -12,6 +12,8 @@ public class ControlePontos : MonoBehaviourPunCallbacks
     [SerializeField] GameObject painelVitoria;
     [SerializeField] Slider barra;
     [SerializeField] TMP_Text mensagemVitoria;
+    int pontosP1;
+    int pontosP2;
     void Start()
     {
         painelVitoria.SetActive(false);
@@ -28,9 +30,6 @@ public class ControlePontos : MonoBehaviourPunCallbacks
     {
         foreach (var jogador in PhotonNetwork.PlayerList)
         {
-            int pontosP1 = 50;
-            int pontosP2 = 0;
-
             if (jogador.ActorNumber == 1)
             {
                 pontosP1 = jogador.GetScore();
@@ -39,26 +38,17 @@ public class ControlePontos : MonoBehaviourPunCallbacks
             {
                 pontosP2 = -jogador.GetScore();
             }
-            barra.value = pontosP1 + pontosP2;
         }
-        if (InstanciarNota.audioSource.clip.name == "Jongo")
+        barra.value = pontosP1 + pontosP2;
+        if (!InstanciarNota.audioSource.isPlaying && InstanciarNota.musicaTocando)
         {
-            if (Jogador1Controle.notasDestruidas1 == 330 && Jogador2Controle.notasDestruidas2 == 330)
-            {
-                TerminouJogo();
-            }
-        }
-        else
-        {
-            if (Jogador1Controle.notasDestruidas1 == 100 && Jogador2Controle.notasDestruidas2 == 100)
-            {
-                TerminouJogo();
-            }
+            TerminouJogo();
         }
     }
 
     void TerminouJogo()
     {
+        painelVitoria.SetActive(true);
         if (barra.value == 50)
         {
             mensagemVitoria.text = "EMPATE";
