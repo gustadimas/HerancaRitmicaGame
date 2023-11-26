@@ -572,7 +572,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1912920418958320156, guid: 1662963716a85d34da5b75ed98885c4b, type: 3}
       propertyPath: mensagens.Array.size
-      value: 4
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1912920418958320156, guid: 1662963716a85d34da5b75ed98885c4b, type: 3}
       propertyPath: npcs.Array.data[1].nome
@@ -599,20 +599,66 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: e902e08e0a4b3fb4db255251d06ea2cd, type: 3}
     - target: {fileID: 1912920418958320156, guid: 1662963716a85d34da5b75ed98885c4b, type: 3}
+      propertyPath: mensagens.Array.data[0].npcID
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1912920418958320156, guid: 1662963716a85d34da5b75ed98885c4b, type: 3}
+      propertyPath: mensagens.Array.data[1].npcID
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1912920418958320156, guid: 1662963716a85d34da5b75ed98885c4b, type: 3}
       propertyPath: mensagens.Array.data[2].npcID
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1912920418958320156, guid: 1662963716a85d34da5b75ed98885c4b, type: 3}
       propertyPath: mensagens.Array.data[3].npcID
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1912920418958320156, guid: 1662963716a85d34da5b75ed98885c4b, type: 3}
+      propertyPath: mensagens.Array.data[4].npcID
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1912920418958320156, guid: 1662963716a85d34da5b75ed98885c4b, type: 3}
+      propertyPath: mensagens.Array.data[5].npcID
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1912920418958320156, guid: 1662963716a85d34da5b75ed98885c4b, type: 3}
+      propertyPath: mensagens.Array.data[6].npcID
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1912920418958320156, guid: 1662963716a85d34da5b75ed98885c4b, type: 3}
+      propertyPath: mensagens.Array.data[0].mensagens
+      value: "Agrade\xE7o a cada um de voc\xEAs por compartilhar sua sabedoria, suas
+        hist\xF3rias e, acima de tudo, seus ritmos que pulsam em nossos cora\xE7\xF5es."
+      objectReference: {fileID: 0}
+    - target: {fileID: 1912920418958320156, guid: 1662963716a85d34da5b75ed98885c4b, type: 3}
+      propertyPath: mensagens.Array.data[1].mensagens
+      value: "Agora, retorno ao meu lar com um cora\xE7\xE3o grato e uma vis\xE3o
+        clara."
+      objectReference: {fileID: 0}
+    - target: {fileID: 1912920418958320156, guid: 1662963716a85d34da5b75ed98885c4b, type: 3}
       propertyPath: mensagens.Array.data[2].mensagens
-      value: Falando
+      value: "Nossa comunidade n\xE3o apenas honrar\xE1 as tradi\xE7\xF5es que nos
+        moldaram, mas tamb\xE9m explorar\xE1 novos horizontes, misturando a riqueza
+        do passado com a promessa do futuro."
       objectReference: {fileID: 0}
     - target: {fileID: 1912920418958320156, guid: 1662963716a85d34da5b75ed98885c4b, type: 3}
       propertyPath: mensagens.Array.data[3].mensagens
-      value: Falando
+      value: "O caminho que trilharemos a partir de hoje refletir\xE1 a for\xE7a
+        e a beleza da nossa diversidade! "
+      objectReference: {fileID: 0}
+    - target: {fileID: 1912920418958320156, guid: 1662963716a85d34da5b75ed98885c4b, type: 3}
+      propertyPath: mensagens.Array.data[4].mensagens
+      value: "Fa\xE7o das suas palavras as minhas, Amina."
+      objectReference: {fileID: 0}
+    - target: {fileID: 1912920418958320156, guid: 1662963716a85d34da5b75ed98885c4b, type: 3}
+      propertyPath: mensagens.Array.data[5].mensagens
+      value: Falou e disse, Amina. Juntos, sempre seremos mais fortes.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1912920418958320156, guid: 1662963716a85d34da5b75ed98885c4b, type: 3}
+      propertyPath: mensagens.Array.data[6].mensagens
+      value: "Voc\xEA amadureceu tanto, Amina. Se tornou uma l\xEDder que deixaria
+        a sua m\xE3e orgulhosa."
       objectReference: {fileID: 0}
     - target: {fileID: 3878540319696077465, guid: 1662963716a85d34da5b75ed98885c4b, type: 3}
       propertyPath: m_Size.x
@@ -7252,7 +7298,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40.65
+  m_fontSize: 39.6
   m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 1

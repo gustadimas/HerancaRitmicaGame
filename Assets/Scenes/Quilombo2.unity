@@ -1377,6 +1377,29 @@ PrefabInstance:
       propertyPath: m_TagString
       value: NPC
       objectReference: {fileID: 0}
+    - target: {fileID: 1576409347227658048, guid: 2b4957c6eb0d73349a6da499aafd789c, type: 3}
+      propertyPath: mensagens.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1576409347227658048, guid: 2b4957c6eb0d73349a6da499aafd789c, type: 3}
+      propertyPath: mensagens.Array.data[1].npcID
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1576409347227658048, guid: 2b4957c6eb0d73349a6da499aafd789c, type: 3}
+      propertyPath: mensagens.Array.data[0].mensagens
+      value: "Ol\xE1! Voc\xEA deve ser a Amina, n\xE3o \xE9? Est\xE1vamos \xE0 sua
+        espera. Me chamo Juca, a prop\xF3sito."
+      objectReference: {fileID: 0}
+    - target: {fileID: 1576409347227658048, guid: 2b4957c6eb0d73349a6da499aafd789c, type: 3}
+      propertyPath: mensagens.Array.data[1].mensagens
+      value: "Na maior parte do tempo, o V\xE3o das Almas est\xE1 bastante vazio,
+        mas sempre nos reunimos aqui em ocasi\xF5es especiais, e a visita da l\xEDder
+        do Quilombo Quingoma \xE9 uma dessas ocasi\xF5es."
+      objectReference: {fileID: 0}
+    - target: {fileID: 1576409347227658048, guid: 2b4957c6eb0d73349a6da499aafd789c, type: 3}
+      propertyPath: mensagens.Array.data[2].mensagens
+      value: "V\xE1 depressa, Z\xE9 Maria aguarda pela sua chegada. "
+      objectReference: {fileID: 0}
     - target: {fileID: 2730554414193835170, guid: 2b4957c6eb0d73349a6da499aafd789c, type: 3}
       propertyPath: m_Speed
       value: 1
@@ -2140,11 +2163,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8372745055609893891, guid: c2766ec5118ba784ca517cbe5bd7a8f0, type: 3}
       propertyPath: nomeCenaDestino
-      value: Quilombo3
+      value: Sussa
       objectReference: {fileID: 0}
     - target: {fileID: 8372745055609893891, guid: c2766ec5118ba784ca517cbe5bd7a8f0, type: 3}
       propertyPath: levarParaOutraCena
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372745055609893891, guid: c2766ec5118ba784ca517cbe5bd7a8f0, type: 3}
+      propertyPath: mensagens.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372745055609893891, guid: c2766ec5118ba784ca517cbe5bd7a8f0, type: 3}
+      propertyPath: mensagens.Array.data[1].npcID
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372745055609893891, guid: c2766ec5118ba784ca517cbe5bd7a8f0, type: 3}
+      propertyPath: mensagens.Array.data[0].mensagens
+      value: "Sauda\xE7\xF5es, Amina! Sou Z\xE9 Maria, o respons\xE1vel pelo V\xE3o
+        das Folhas."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372745055609893891, guid: c2766ec5118ba784ca517cbe5bd7a8f0, type: 3}
+      propertyPath: mensagens.Array.data[1].mensagens
+      value: "Nossas ra\xEDzes est\xE3o fincadas na terra, e a Sussa \xE9 a batida
+        que ecoa em nossos cora\xE7\xF5es. \xC9 a dan\xE7a que te conecta com a alma
+        desta nossa terra."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372745055609893891, guid: c2766ec5118ba784ca517cbe5bd7a8f0, type: 3}
+      propertyPath: mensagens.Array.data[2].mensagens
+      value: "Soube que est\xE1 aqui para aprender um pouco sobre n\xF3s, e n\xE3o
+        h\xE1 maneira melhor de fazer isso do que sentindo o ritmo que nos move.
+        O que me diz?"
       objectReference: {fileID: 0}
     - target: {fileID: 9012998521656819285, guid: c2766ec5118ba784ca517cbe5bd7a8f0, type: 3}
       propertyPath: m_Name
@@ -14839,7 +14887,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40.65
+  m_fontSize: 39.6
   m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 1

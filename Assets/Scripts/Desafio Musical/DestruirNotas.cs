@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Data;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -14,12 +15,21 @@ public class DestruirNotas : MonoBehaviour
     [SerializeField] Image mensagemCombo;
     [SerializeField] Sprite[] mensagens;
 
+    AudioSource musica;
+    [SerializeField] GameObject painelVitoria;
+
+    public static bool venceuSamba, venceuJongo, venceuSussa;
     private void Start()
     {
+        musica = GetComponent<AudioSource>();
+        painelVitoria.SetActive(false);
         combo = 0;
         pontos = 50;
         notasDestruidas = 0;
         desafioAtual = SceneManager.GetActiveScene();
+        venceuSamba = false;
+        venceuJongo = false;
+        venceuSussa = false;
     }
     void Update()
     {
@@ -223,60 +233,77 @@ public class DestruirNotas : MonoBehaviour
                 }
             }
 
-            if (desafioAtual.name == "Samba de Roda")
+            
+        }
+
+        if (!musica.isPlaying)
+        {
+            ContabilizarPontos();
+        }
+    }
+    void ContabilizarPontos()
+    {
+        painelVitoria.SetActive(true);
+        Dialogos.dialogoAtivo = true;
+        if (desafioAtual.name == "SambaDeRoda")
+        {
+            venceuSamba = true;
+        }
+        if (desafioAtual.name == "Jongo")
+        {
+            if (barra.value > 50)
             {
-                if (notasDestruidas >= 100)
-                {
-                    ContabilizarPontos();
-                }
+                venceuJongo = true;
             }
-            if (desafioAtual.name == "Jongo")
+            else if (barra.value <= 50)
             {
-                if (notasDestruidas >= 330)
-                {
-                    ContabilizarPontos();
-                }
-            }
-            if (desafioAtual.name == "Sussa")
-            {
-                if (notasDestruidas >= 100)
-                {
-                    ContabilizarPontos();
-                }
+                venceuJongo = false;
             }
         }
 
-        void ContabilizarPontos()
+        if (desafioAtual.name == "Sussa")
         {
-            if (desafioAtual.name == "Samba de Roda")
+            if (barra.value > 50)
+            {
+                venceuSussa = true;
+            }
+            else if (barra.value <= 50)
+            {
+                venceuSussa = false;
+            }
+        }
+    }
+
+    public void MudarCena()
+    {
+        if (desafioAtual.name == "SambaDeRoda")
+        {
+            SceneManager.LoadScene("Mapa");
+            ControladorCenas.quilombo1 = true;
+        }
+        if (desafioAtual.name == "Jongo")
+        {
+            if (barra.value > 50)
             {
                 SceneManager.LoadScene("Mapa");
-                ControladorCenas.quingoma = true;
+                ControladorCenas.quilombo2 = true;
             }
-            if (desafioAtual.name == "Jongo")
+            else if (barra.value <= 50)
             {
-                if (barra.value > 50)
-                {
-                    SceneManager.LoadScene("Mapa");
-                    ControladorCenas.quilombo1 = true;
-                }
-                else if (barra.value <= 50)
-                {
-                    SceneManager.LoadScene("Quilombo1");
-                }
+                SceneManager.LoadScene("Quilombo1");
             }
+        }
 
-            if (desafioAtual.name == "Sussa")
+        if (desafioAtual.name == "Sussa")
+        {
+            if (barra.value > 50)
             {
-                if (barra.value > 50)
-                {
-                    SceneManager.LoadScene("Mapa");
-                    ControladorCenas.quilombo2 = true;
-                }
-                else if (barra.value <= 50)
-                {
-                    SceneManager.LoadScene("Quilombo2");
-                }
+                SceneManager.LoadScene("Mapa");
+                ControladorCenas.quilombo3 = true;
+            }
+            else if (barra.value <= 50)
+            {
+                SceneManager.LoadScene("Quilombo2");
             }
         }
     }

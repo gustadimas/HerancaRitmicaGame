@@ -6237,7 +6237,40 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1912920418958320156, guid: 1662963716a85d34da5b75ed98885c4b, type: 3}
       propertyPath: nomeCenaDestino
-      value: Quilombo1
+      value: SambaDeRoda
+      objectReference: {fileID: 0}
+    - target: {fileID: 1912920418958320156, guid: 1662963716a85d34da5b75ed98885c4b, type: 3}
+      propertyPath: mensagens.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1912920418958320156, guid: 1662963716a85d34da5b75ed98885c4b, type: 3}
+      propertyPath: mensagens.Array.data[1].npcID
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1912920418958320156, guid: 1662963716a85d34da5b75ed98885c4b, type: 3}
+      propertyPath: mensagens.Array.data[0].mensagens
+      value: "Amina, minha filha, sei que o fardo da lideran\xE7a agora repousa sobre
+        seus ombros."
+      objectReference: {fileID: 0}
+    - target: {fileID: 1912920418958320156, guid: 1662963716a85d34da5b75ed98885c4b, type: 3}
+      propertyPath: mensagens.Array.data[1].mensagens
+      value: "Sua m\xE3e confiou em voc\xEA para guiar o nosso quilombo, e todos
+        aqui t\xEAm grandes esperan\xE7as em seu cora\xE7\xE3o."
+      objectReference: {fileID: 0}
+    - target: {fileID: 1912920418958320156, guid: 1662963716a85d34da5b75ed98885c4b, type: 3}
+      propertyPath: mensagens.Array.data[2].mensagens
+      value: "Se decidiu mesmo partir nesta jornada, n\xE3o posso deixar que v\xE1
+        sem que esteja preparada."
+      objectReference: {fileID: 0}
+    - target: {fileID: 1912920418958320156, guid: 1662963716a85d34da5b75ed98885c4b, type: 3}
+      propertyPath: mensagens.Array.data[3].mensagens
+      value: "Se decidiu mesmo partir nesta jornada, n\xE3o posso deixar que v\xE1
+        sem que esteja preparada."
+      objectReference: {fileID: 0}
+    - target: {fileID: 1912920418958320156, guid: 1662963716a85d34da5b75ed98885c4b, type: 3}
+      propertyPath: mensagens.Array.data[4].mensagens
+      value: "Se decidiu mesmo partir nesta jornada, n\xE3o posso deixar que v\xE1
+        sem que esteja preparada."
       objectReference: {fileID: 0}
     - target: {fileID: 7412323733435331745, guid: 1662963716a85d34da5b75ed98885c4b, type: 3}
       propertyPath: m_RootOrder
@@ -8320,7 +8353,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40.65
+  m_fontSize: 39.6
   m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -13578,7 +13611,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 26.000122, y: 29.99998}
+  m_AnchoredPosition: {x: 26.000244, y: 30}
   m_SizeDelta: {x: -194, y: 326}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1885215591

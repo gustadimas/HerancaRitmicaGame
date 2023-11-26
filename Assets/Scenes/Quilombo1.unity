@@ -9337,7 +9337,38 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8730207816157603800, guid: 9ebbec50ce51f0b4f9ef5d34ca53dee0, type: 3}
       propertyPath: nomeCenaDestino
-      value: Quilombo2
+      value: Jongo
+      objectReference: {fileID: 0}
+    - target: {fileID: 8730207816157603800, guid: 9ebbec50ce51f0b4f9ef5d34ca53dee0, type: 3}
+      propertyPath: mensagens.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8730207816157603800, guid: 9ebbec50ce51f0b4f9ef5d34ca53dee0, type: 3}
+      propertyPath: mensagens.Array.data[1].npcID
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8730207816157603800, guid: 9ebbec50ce51f0b4f9ef5d34ca53dee0, type: 3}
+      propertyPath: mensagens.Array.data[0].mensagens
+      value: "Amina! \xC9 t\xE3o bom finalmente te ver assim, de pertinho."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8730207816157603800, guid: 9ebbec50ce51f0b4f9ef5d34ca53dee0, type: 3}
+      propertyPath: mensagens.Array.data[1].mensagens
+      value: "Eu sou Dona Rosa, respons\xE1vel por cuidar e, junto com todos os outros,
+        manter viva a chama da nossa comunidade."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8730207816157603800, guid: 9ebbec50ce51f0b4f9ef5d34ca53dee0, type: 3}
+      propertyPath: mensagens.Array.data[2].mensagens
+      value: "Aqui, nossos passos ecoam ao som do Jongo, uma dan\xE7a que \xE9 raiz
+        e resist\xEAncia."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8730207816157603800, guid: 9ebbec50ce51f0b4f9ef5d34ca53dee0, type: 3}
+      propertyPath: mensagens.Array.data[3].mensagens
+      value: "O Jongo \xE9 a express\xE3o viva da nossa luta e da nossa alegria."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8730207816157603800, guid: 9ebbec50ce51f0b4f9ef5d34ca53dee0, type: 3}
+      propertyPath: mensagens.Array.data[4].mensagens
+      value: "Se quer aprender um pouco mais sobre n\xF3s, por que n\xE3o dan\xE7amos
+        Jongo e sentimos, juntas, a energia que fluir\xE1 de nossos passos? "
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ebbec50ce51f0b4f9ef5d34ca53dee0, type: 3}
@@ -9799,6 +9830,33 @@ PrefabInstance:
     - target: {fileID: 708532937441696330, guid: 0021345080f558d438e8b913ab7ad571, type: 3}
       propertyPath: m_BaseOffset
       value: 0.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 1316635285751425206, guid: 0021345080f558d438e8b913ab7ad571, type: 3}
+      propertyPath: mensagens.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1316635285751425206, guid: 0021345080f558d438e8b913ab7ad571, type: 3}
+      propertyPath: mensagens.Array.data[1].npcID
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1316635285751425206, guid: 0021345080f558d438e8b913ab7ad571, type: 3}
+      propertyPath: mensagens.Array.data[0].mensagens
+      value: "Ei, Amina. Por aqui! Voc\xEA \xE9 a Amina, n\xE3o \xE9? Finalmente
+        consegui encontr\xE1-la, fiquei andando para l\xE1 e pra c\xE1 atr\xE1s de
+        voc\xEA."
+      objectReference: {fileID: 0}
+    - target: {fileID: 1316635285751425206, guid: 0021345080f558d438e8b913ab7ad571, type: 3}
+      propertyPath: mensagens.Array.data[1].mensagens
+      value: "Eu me chamo Ana, e \xE9 uma honra t\xEA-la aqui conosco hoje."
+      objectReference: {fileID: 0}
+    - target: {fileID: 1316635285751425206, guid: 0021345080f558d438e8b913ab7ad571, type: 3}
+      propertyPath: mensagens.Array.data[2].mensagens
+      value: "Voc\xEA chegou em boa hora, estamos todos nos preparando para a Festa
+        do Jongo."
+      objectReference: {fileID: 0}
+    - target: {fileID: 1316635285751425206, guid: 0021345080f558d438e8b913ab7ad571, type: 3}
+      propertyPath: mensagens.Array.data[3].mensagens
+      value: "Agora, v\xE1 em frente. Dona Rosa est\xE1 ansiosa para conhec\xEA-la."
       objectReference: {fileID: 0}
     - target: {fileID: 2209144148410972960, guid: 0021345080f558d438e8b913ab7ad571, type: 3}
       propertyPath: m_RootOrder
@@ -12124,7 +12182,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40.65
+  m_fontSize: 39.6
   m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 1

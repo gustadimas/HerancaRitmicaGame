@@ -110,7 +110,7 @@ public class ControladorDialogo : MonoBehaviour
         {
             GameObject[] _npcs = GameObject.FindGameObjectsWithTag("NPC");
 
-            foreach(GameObject _npc in _npcs)
+            foreach (GameObject _npc in _npcs)
             {
                 _npc.GetComponent<AtivarDialogo>()?.ComecarDialogo();
             }
