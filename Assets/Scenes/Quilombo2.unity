@@ -108,7 +108,7 @@ NavMeshSettings:
     agentTypeID: 0
     agentRadius: 0.5
     agentHeight: 2
-    agentSlope: 45
+    agentSlope: 7.7
     agentClimb: 0.4
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 2dc68fafb90137b4ca3f59f987a236b7, type: 2}
 --- !u!1 &2420961
 GameObject:
   m_ObjectHideFlags: 0
@@ -1378,8 +1378,20 @@ PrefabInstance:
       value: NPC
       objectReference: {fileID: 0}
     - target: {fileID: 2730554414193835170, guid: 2b4957c6eb0d73349a6da499aafd789c, type: 3}
+      propertyPath: m_Speed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2730554414193835170, guid: 2b4957c6eb0d73349a6da499aafd789c, type: 3}
+      propertyPath: m_Height
+      value: 0.00001
+      objectReference: {fileID: 0}
+    - target: {fileID: 2730554414193835170, guid: 2b4957c6eb0d73349a6da499aafd789c, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2730554414193835170, guid: 2b4957c6eb0d73349a6da499aafd789c, type: 3}
+      propertyPath: m_BaseOffset
+      value: 0.88
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b4957c6eb0d73349a6da499aafd789c, type: 3}
@@ -10843,6 +10855,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1245415011}
   m_Mesh: {fileID: -3293271005959699211, guid: 255db469933979448b4ec7665b457daf, type: 3}
+--- !u!1 &1249765520 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1154275147986942987, guid: 2b4957c6eb0d73349a6da499aafd789c, type: 3}
+  m_PrefabInstance: {fileID: 154438031}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1249765527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1249765520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69e6e3b9fd1e2a74599e595aad32c552, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  raioDeVagar: 15
+  tempoEntreDestinos: 8
 --- !u!1 &1255247948
 GameObject:
   m_ObjectHideFlags: 0

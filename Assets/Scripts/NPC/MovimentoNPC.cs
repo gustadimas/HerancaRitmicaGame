@@ -5,6 +5,7 @@ using UnityEngine.AI;
 public class MovimentoNPC : MonoBehaviour
 {
     NavMeshAgent agent;
+    Animator anima;
 
     [SerializeField] float raioDeVagar = 15f;
     [SerializeField] float tempoEntreDestinos = 8f;
@@ -12,7 +13,15 @@ public class MovimentoNPC : MonoBehaviour
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        anima = transform.GetChild(0).GetComponent<Animator>();
+        Debug.Log("Animator: " + anima.gameObject.name);
         StartCoroutine(Vagar());
+    }
+
+    private void Update()
+    {
+        AtualizarEstadoAnimacao();
+        Debug.Log("Animator: " + anima.gameObject.name);
     }
 
     private IEnumerator Vagar()
@@ -33,21 +42,20 @@ public class MovimentoNPC : MonoBehaviour
         return _hit.position;
     }
 
-    private void OnCollisionEnter(Collision other)
+    void AtualizarEstadoAnimacao()
     {
-        if (other.gameObject.tag == "projetil")
-        {
-            Object.Destroy(other.gameObject);
-            base.gameObject.SetActive(false);
-        }
-    }
+        Vector3 movimento = agent.velocity;
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "projetil")
+        if (movimento.magnitude > 0.1f)
         {
-            Object.Destroy(other.gameObject);
-            base.gameObject.SetActive(false);
+            anima.SetInteger("estado", 1);
+            Debug.Log("Andando");
+        }
+
+        else
+        {
+            anima.SetInteger("estado", 0);
+            Debug.Log("Parado");
         }
     }
 }
