@@ -108,7 +108,7 @@ NavMeshSettings:
     agentTypeID: 0
     agentRadius: 0.5
     agentHeight: 2
-    agentSlope: 6.2
+    agentSlope: 1.1
     agentClimb: 0.01
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
@@ -17400,6 +17400,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   raioDeVagar: 15
   tempoEntreDestinos: 8
+  tempoDeEspera: 1
 --- !u!1001 &1863689374
 PrefabInstance:
   m_ObjectHideFlags: 0

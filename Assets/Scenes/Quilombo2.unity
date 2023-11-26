@@ -108,7 +108,7 @@ NavMeshSettings:
     agentTypeID: 0
     agentRadius: 0.5
     agentHeight: 2
-    agentSlope: 7.7
+    agentSlope: 0
     agentClimb: 0.4
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
@@ -1335,7 +1335,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1154275147986942983, guid: 2b4957c6eb0d73349a6da499aafd789c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8.35
+      value: 7.76
       objectReference: {fileID: 0}
     - target: {fileID: 1154275147986942983, guid: 2b4957c6eb0d73349a6da499aafd789c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2479,6 +2479,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6767189444296131522, guid: 4a0c8c652fd39d6429e73eed3d7879aa, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6767189445427705367, guid: 4a0c8c652fd39d6429e73eed3d7879aa, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1427408944}
+    - target: {fileID: 6767189445427705367, guid: 4a0c8c652fd39d6429e73eed3d7879aa, type: 3}
+      propertyPath: m_RenderMode
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -10134,7 +10142,6 @@ RectTransform:
   - {fileID: 737242059}
   - {fileID: 1101991011}
   - {fileID: 1997028579}
-  - {fileID: 1925241469}
   m_Father: {fileID: 1211050434}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10618,6 +10625,7 @@ RectTransform:
   m_Children:
   - {fileID: 446270484}
   - {fileID: 1167427430}
+  - {fileID: 1925241469}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10873,7 +10881,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   raioDeVagar: 15
-  tempoEntreDestinos: 8
+  tempoEntreDestinos: 10
 --- !u!1 &1255247948
 GameObject:
   m_ObjectHideFlags: 0
@@ -16180,8 +16188,8 @@ RectTransform:
   - {fileID: 1822087638}
   - {fileID: 1793007023}
   - {fileID: 667496800}
-  m_Father: {fileID: 1167427430}
-  m_RootOrder: 3
+  m_Father: {fileID: 1211050434}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
