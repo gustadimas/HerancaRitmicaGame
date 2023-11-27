@@ -15,7 +15,6 @@ public class InstanciarNota : MonoBehaviour
     public static bool comecou, musicaTocando;
     Vector2[] posTempoNotaOnline;
     
-
     void Start()
     {
         musicaTocando = false;

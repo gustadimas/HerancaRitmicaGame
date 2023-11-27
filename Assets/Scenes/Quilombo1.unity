@@ -448,7 +448,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6767189444296131522, guid: 4a0c8c652fd39d6429e73eed3d7879aa, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6767189444296131522, guid: 4a0c8c652fd39d6429e73eed3d7879aa, type: 3}
       propertyPath: m_LocalPosition.x
@@ -489,6 +489,14 @@ PrefabInstance:
     - target: {fileID: 6767189444296131522, guid: 4a0c8c652fd39d6429e73eed3d7879aa, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6767189445427705367, guid: 4a0c8c652fd39d6429e73eed3d7879aa, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 677670286}
+    - target: {fileID: 6767189445427705367, guid: 4a0c8c652fd39d6429e73eed3d7879aa, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a0c8c652fd39d6429e73eed3d7879aa, type: 3}
@@ -12711,7 +12719,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40.65
+  m_fontSize: 37.8
   m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -13419,7 +13427,7 @@ Transform:
   m_Children:
   - {fileID: 677670283}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 5.335, y: 0, z: 0}
 --- !u!1001 &1372825245
 PrefabInstance:
@@ -15027,7 +15035,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 34.716, y: 0, z: 0}
 --- !u!114 &1526830760
 MonoBehaviour:

@@ -7188,6 +7188,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6767189445427705367, guid: 4a0c8c652fd39d6429e73eed3d7879aa, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1393303708}
+    - target: {fileID: 6767189445427705367, guid: 4a0c8c652fd39d6429e73eed3d7879aa, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a0c8c652fd39d6429e73eed3d7879aa, type: 3}
 --- !u!1001 &946470659
@@ -8354,7 +8362,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40.65
+  m_fontSize: 37.8
   m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -10583,7 +10591,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

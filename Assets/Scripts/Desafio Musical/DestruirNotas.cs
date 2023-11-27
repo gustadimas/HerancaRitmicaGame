@@ -19,7 +19,7 @@ public class DestruirNotas : MonoBehaviour
     [SerializeField] GameObject painelVitoria;
 
     public static bool venceuSamba, venceuJongo, venceuSussa;
-    private void Start()
+    private void Awake()
     {
         musica = GetComponent<AudioSource>();
         painelVitoria.SetActive(false);
