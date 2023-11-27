@@ -62,10 +62,7 @@ public class InstanciarNota : MonoBehaviour
 
     IEnumerator NotaSpawnOnline()
     {
-        Debug.LogError("Ainda não foi!");
         yield return new WaitUntil(() => comecou);
-
-        Debug.LogError("Já foi!");
 
         SelecionarMusica();
 

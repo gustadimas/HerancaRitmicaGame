@@ -20,8 +20,6 @@ public class Jogador : MonoBehaviour
     Rigidbody rb;
     Animator anima;
 
-    //AtivarDialogo dialogo;
-
     estadoMovimento estado;
 
     void Start()
@@ -29,8 +27,6 @@ public class Jogador : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         anima = transform.GetChild(0).gameObject.GetComponent<Animator>();
         posicaoInicialPonto = pontoJoystick.position;
-
-        //dialogo = FindObjectOfType<AtivarDialogo>();
     }
 
     void Update()

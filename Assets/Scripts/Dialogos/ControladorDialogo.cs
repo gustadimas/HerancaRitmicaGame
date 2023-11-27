@@ -25,7 +25,7 @@ public class ControladorDialogo : MonoBehaviour
 
     Jogador jogador;
 
-    void Start()
+    void Awake()
     {
         botaoInteragir.SetActive(false);
         backgroundCaixa.transform.localScale = Vector3.zero;
@@ -43,7 +43,6 @@ public class ControladorDialogo : MonoBehaviour
     public void AbrirDialogo(Mensagem[] mensagens, NPC[] npcs, AtivarDialogo _abrirDialogo, DialogoFinal _dialogoFinal)
     {
         dialogoFinal = _dialogoFinal;
-        //_dialogoFinal?.AnimacaoFinal();
         abrirDialogo = _abrirDialogo;
         npcAtual = npcs;
         mensagemAtual = mensagens;
@@ -86,14 +85,11 @@ public class ControladorDialogo : MonoBehaviour
         }
         else
         {
-            print("O Diálogo Acabou!");
             backgroundCaixa.LeanScale(Vector3.zero, 0.5f).setEaseInOutExpo();
             dialogoAtivo = false;
 
-
             if (abrirDialogo != null)
             {
-                print("Entrou na Coroutine");
                 StartCoroutine(abrirDialogo.CarregarCenaAposDialogo());
             }
         }

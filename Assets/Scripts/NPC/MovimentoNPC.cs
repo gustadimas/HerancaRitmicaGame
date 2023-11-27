@@ -63,18 +63,15 @@ public class MovimentoNPC : MonoBehaviour
         if (movimento.magnitude > 0.1f)
         {
             anima.SetInteger("estado", 1);
-            Debug.Log("Andando");
         }
         else
         {
             anima.SetInteger("estado", 0);
-            Debug.Log("Parado");
         }
 
         if (ControladorDialogo.dialogoAtivo)
         {
             anima.SetInteger("estado", 2);
-            Debug.Log("Falando");
         }
     }
 }

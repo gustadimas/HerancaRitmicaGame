@@ -8,7 +8,7 @@ public class MapaQuilombos : MonoBehaviour
 {
     [Header("Níveis:")]
     [SerializeField] Transform containerNiveis;
-    List<GameObject>elementos = new List<GameObject>();
+    List <GameObject> elementos = new List<GameObject>();
     GameObject ElementoAtual => elementos[indiceAtual];
 
     [Header("Painéis:")]
@@ -55,7 +55,7 @@ public class MapaQuilombos : MonoBehaviour
             ControladorCenas.quingoma = false;
             ControladorCenas.quilombo2 = false;
             ControladorCenas.quilombo3 = false;
-            Invoke("CenaQuilombo1", 4f);
+            Invoke(nameof(CenaQuilombo1), 4f);
             indiceAtual = Mathf.Clamp(indiceAtual, 0, elementos.Count - 1);
             ElementoAtual.SetActive(true);
         }
@@ -66,9 +66,9 @@ public class MapaQuilombos : MonoBehaviour
             ControladorCenas.quingoma = false;
             ControladorCenas.quilombo2 = false;
             ControladorCenas.quilombo3 = false;
-            Invoke("Quilombo1Concluido", 2f);
-            Invoke("NivelQuilombo2", 4f);
-            Invoke("CenaQuilombo2", 8f);
+            Invoke(nameof(Quilombo1Concluido), 2f);
+            Invoke(nameof(NivelQuilombo2), 4f);
+            Invoke(nameof(CenaQuilombo2), 8f);
             indiceAtual = Mathf.Clamp(indiceAtual, 0, elementos.Count - 1);
             ElementoAtual.SetActive(true);
         }
@@ -79,9 +79,9 @@ public class MapaQuilombos : MonoBehaviour
             ControladorCenas.quingoma = false;
             ControladorCenas.quilombo2 = false;
             ControladorCenas.quilombo3 = false;
-            Invoke("Quilombo2Concluido", 2f);
-            Invoke("NivelQuilombo3", 4f);
-            Invoke("CenaQuilombo3", 8f);
+            Invoke(nameof(Quilombo2Concluido), 2f);
+            Invoke(nameof(NivelQuilombo3), 4f);
+            Invoke(nameof(CenaQuilombo3), 8f);
             indiceAtual = Mathf.Clamp(indiceAtual, 0, elementos.Count - 1);
             ElementoAtual.SetActive(true);
         }

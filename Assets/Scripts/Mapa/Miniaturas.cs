@@ -9,13 +9,8 @@ public class Miniaturas : MonoBehaviour
 
     void Update()
     {
-        //if (ControladorCenas.quingoma)
             quingoma.transform.Rotate(rotacionarY, rotationSpeed * Time.deltaTime);
-
-        //if (ControladorCenas.quilombo1)
             quilombo1.transform.Rotate(rotacionarY, rotationSpeed * Time.deltaTime);
-
-        //if (ControladorCenas.quilombo2)
             quilombo2.transform.Rotate(rotacionarY, rotationSpeed * Time.deltaTime);
     }
 }
