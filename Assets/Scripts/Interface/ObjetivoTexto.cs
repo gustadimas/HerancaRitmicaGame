@@ -7,7 +7,7 @@ public class ObjetivoTexto : MonoBehaviour
     public TextMeshProUGUI textoObjetivo;
     public Image fundoImagem;
     public float duracaoTexto = 5f;
-    public float duracaoVisivel = 3f; 
+    public float duracaoVisivel = 5f; 
     public static bool textoAtivo = true;
 
     private CanvasGroup canvasGroup;
