@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7a6d4e61123d6f24586ef94af690fec5
+guid: 46f3165e59881a64186fe476abfdf6d7
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -115,18 +115,134 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: PANDEIROSTAMBORES_2
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 764
+        width: 380
+        height: 369
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 900e30c77c08b244ba1dc54d2bb2116e
+      internalID: -242080353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PANDEIROSTAMBORES_7
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 204
+        width: 458
+        height: 465
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f5c77462b54145408a56df9ae1a5e8c
+      internalID: -1031455669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PANDEIROSTAMBORES_8
+      rect:
+        serializedVersion: 2
+        x: 738
+        y: 218
+        width: 458
+        height: 466
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15ad0f3c66feabd4d954148edc43eaeb
+      internalID: -876892169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PANDEIROSTAMBORES_9
+      rect:
+        serializedVersion: 2
+        x: 1356
+        y: 204
+        width: 458
+        height: 465
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0158c3f81de4d4429973c3418876d13
+      internalID: 650598133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PANDEIROSTAMBORES_10
+      rect:
+        serializedVersion: 2
+        x: 1932
+        y: 208
+        width: 458
+        height: 465
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5724cf85f6d480a40b0128c7b2fd7318
+      internalID: -779037547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 23e1edea88a72334e8895976f2b406ed
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      PANDEIROSTAMBORES_1: 634150563
+      PANDEIROSTAMBORES_4: 1872128568
+      PANDEIROSTAMBORES_0: -666494779
+      PANDEIROSTAMBORES_10: -779037547
+      PANDEIROSTAMBORES_5: -1764316547
+      PANDEIROSTAMBORES_3: -1471292042
+      PANDEIROSTAMBORES_8: -876892169
+      PANDEIROSTAMBORES_7: -1031455669
+      PANDEIROSTAMBORES_6: -839154273
+      PANDEIROSTAMBORES_2: -242080353
+      PANDEIROSTAMBORES_9: 650598133
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -21,7 +21,6 @@ public class Jogador2Controle : MonoBehaviourPunCallbacks
         notasDestruidas2 = 0;
         
     }
-
     // Update is called once per frame
     void Update()
     {

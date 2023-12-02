@@ -583,7 +583,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 372.2125, y: 0, z: 427.06503, w: -821.09656}
+  m_margin: {x: 414.25323, y: 0, z: 451.08826, w: -821.09656}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -662,7 +662,7 @@ MonoBehaviour:
     brasileiro.\r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 717e9bffb5a819f458ca859730746ee7, type: 2}
-  m_sharedMaterial: {fileID: -1213353215133743960, guid: d397e5aeedf935945945bef6bb5eb099, type: 2}
+  m_sharedMaterial: {fileID: 3735420678581254268, guid: 717e9bffb5a819f458ca859730746ee7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -722,7 +722,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 372.2125, y: 0, z: 427.06503, w: -450.57303}
+  m_margin: {x: 426.2649, y: 0, z: 451.08826, w: -450.57303}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 1
@@ -1008,7 +1008,7 @@ MonoBehaviour:
     de inoc\xEAncia, refletia-se agora a responsabilidade prematura de liderar..."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 717e9bffb5a819f458ca859730746ee7, type: 2}
-  m_sharedMaterial: {fileID: 4214204822941054544, guid: 205fa632196621544a4bfeb68027e68f, type: 2}
+  m_sharedMaterial: {fileID: 3735420678581254268, guid: 717e9bffb5a819f458ca859730746ee7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1068,7 +1068,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 372.2125, y: 0, z: 427.06503, w: -450.57303}
+  m_margin: {x: 432.27072, y: 0, z: 469.10574, w: -450.57303}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 1

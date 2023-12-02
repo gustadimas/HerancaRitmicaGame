@@ -16,9 +16,11 @@ public class DestruirNotas : MonoBehaviour
     [SerializeField] Sprite[] mensagens;
 
     AudioSource musica;
-    [SerializeField] GameObject painelVitoria;
+    [SerializeField] GameObject painelVitoria, brilhoRed, brilhoGreen, brilhoPink, brilhoBlue;
 
     public static bool venceuSamba, venceuJongo, venceuSussa;
+
+    bool combou;
     private void Awake()
     {
         musica = GetComponent<AudioSource>();
@@ -30,6 +32,7 @@ public class DestruirNotas : MonoBehaviour
         venceuSamba = false;
         venceuJongo = false;
         venceuSussa = false;
+        SumaBrilho();
     }
     void Update()
     {
@@ -58,7 +61,9 @@ public class DestruirNotas : MonoBehaviour
                             pontos++;
                             notasDestruidas++;
                             combo++;
+                            brilhoRed.SetActive(true);
                             Destroy(vermelho);
+                            Invoke(nameof(SumaBrilho), 0.2f);
                         }
                     }
 
@@ -74,7 +79,9 @@ public class DestruirNotas : MonoBehaviour
                             pontos++;
                             notasDestruidas++;
                             combo++;
+                            brilhoGreen.SetActive(true);
                             Destroy(verde);
+                            Invoke(nameof(SumaBrilho), 0.2f);
                         }
                     }
                 }
@@ -89,7 +96,9 @@ public class DestruirNotas : MonoBehaviour
                             pontos++;
                             notasDestruidas++;
                             combo++;
+                            brilhoPink.SetActive(true);
                             Destroy(rosa);
+                            Invoke(nameof(SumaBrilho), 0.2f);
                         }
                     }
                 }
@@ -104,7 +113,9 @@ public class DestruirNotas : MonoBehaviour
                             pontos++;
                             notasDestruidas++;
                             combo++;
+                            brilhoBlue.SetActive(true);
                             Destroy(azul);
+                            Invoke(nameof(SumaBrilho), 0.2f);
                         }
                     }
                 }
@@ -126,7 +137,9 @@ public class DestruirNotas : MonoBehaviour
                         {
                             pontos++;
                             notasDestruidas++;
+                            brilhoRed.SetActive(true);
                             Destroy(vermelho);
+                            Invoke(nameof(SumaBrilho), 0.2f);
                         }
                     }
 
@@ -141,7 +154,9 @@ public class DestruirNotas : MonoBehaviour
                         {
                             pontos++;
                             notasDestruidas++;
+                            brilhoGreen.SetActive(true);
                             Destroy(verde);
+                            Invoke(nameof(SumaBrilho), 0.2f);
                         }
                     }
                 }
@@ -155,7 +170,9 @@ public class DestruirNotas : MonoBehaviour
                         {
                             pontos++;
                             notasDestruidas++;
+                            brilhoPink.SetActive(true);
                             Destroy(rosa);
+                            Invoke(nameof(SumaBrilho), 0.2f);
                         }
                     }
                 }
@@ -169,7 +186,9 @@ public class DestruirNotas : MonoBehaviour
                         {
                             pontos++;
                             notasDestruidas++;
+                            brilhoBlue.SetActive(true);
                             Destroy(azul);
+                            Invoke(nameof(SumaBrilho), 0.2f);
                         }
                     }
                 }
@@ -187,7 +206,9 @@ public class DestruirNotas : MonoBehaviour
                             {
                                 pontos++;
                                 notasDestruidas++;
+                                brilhoRed.SetActive(true);
                                 Destroy(vermelho);
+                                Invoke(nameof(SumaBrilho), 0.2f);
                             }
                         }
 
@@ -202,7 +223,9 @@ public class DestruirNotas : MonoBehaviour
                             {
                                 pontos++;
                                 notasDestruidas++;
+                                brilhoGreen.SetActive(true);
                                 Destroy(verde);
+                                Invoke(nameof(SumaBrilho), 0.2f);
                             }
                         }
                     }
@@ -216,7 +239,9 @@ public class DestruirNotas : MonoBehaviour
                             {
                                 pontos++;
                                 notasDestruidas++;
+                                brilhoPink.SetActive(true);
                                 Destroy(rosa);
+                                Invoke(nameof(SumaBrilho), 0.2f);
                             }
                         }
                     }
@@ -230,7 +255,9 @@ public class DestruirNotas : MonoBehaviour
                             {
                                 pontos++;
                                 notasDestruidas++;
+                                brilhoBlue.SetActive(true);
                                 Destroy(azul);
+                                Invoke(nameof(SumaBrilho), 0.2f);
                             }
                         }
                     }
@@ -244,6 +271,14 @@ public class DestruirNotas : MonoBehaviour
         {
             ContabilizarPontos();
         }
+    }
+
+    void SumaBrilho()
+    {
+        brilhoRed.SetActive(false);
+        brilhoGreen.SetActive(false);
+        brilhoPink.SetActive(false);
+        brilhoBlue.SetActive(false);
     }
     void ContabilizarPontos()
     {
@@ -314,13 +349,21 @@ public class DestruirNotas : MonoBehaviour
     }
     void VerificarCombo()
     {
+        if (!combou)
+        {
+            float randomPos = Random.Range(-4.44f, 4.44f);
+
+            mensagemCombo.transform.position = new Vector2(randomPos, mensagemCombo.transform.position.y);
+        }
         switch (combo)
         {
             case 0:
+                combou = false;
                 mensagemCombo.enabled = false;
                 break;
 
             case 3:
+                combou = true;
                 mensagemCombo.enabled = true;
                 mensagemCombo.sprite = mensagens[0];
                 StartCoroutine(AumentaEDiminui());
@@ -342,7 +385,6 @@ public class DestruirNotas : MonoBehaviour
                 break;
         }
     }
-
     IEnumerator AumentaEDiminui()
     {
         float tempoDecorrido = 0f;
