@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Data;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -16,11 +15,12 @@ public class DestruirNotas : MonoBehaviour
     [SerializeField] Sprite[] mensagens;
 
     AudioSource musica;
-    [SerializeField] GameObject painelVitoria, brilhoRed, brilhoGreen, brilhoPink, brilhoBlue;
+    [SerializeField] GameObject painelVitoria, brilhoRed, brilhoGreen, brilhoPink, brilhoBlue, maosRed, maosGreen, maosPink, maosBlue;
 
     public static bool venceuSamba, venceuJongo, venceuSussa;
 
     bool combou;
+
     private void Awake()
     {
         musica = GetComponent<AudioSource>();
@@ -33,7 +33,9 @@ public class DestruirNotas : MonoBehaviour
         venceuJongo = false;
         venceuSussa = false;
         SumaBrilho();
+        SumaMaos();
     }
+
     void Update()
     {
         VerificarCombo();
@@ -41,237 +43,67 @@ public class DestruirNotas : MonoBehaviour
         notasGreen = GameObject.FindGameObjectsWithTag("Green");
         notasPink = GameObject.FindGameObjectsWithTag("Pink");
         notasBlue = GameObject.FindGameObjectsWithTag("Blue");
-        
+
         barra.value = pontos;
-        
+
         if (pontos > 100)
         {
             pontos = 100;
         }
-        if (Input.touchCount == 1)
+
+        // Iterar por todos os toques
+        for (int i = 0; i < Input.touchCount; i++)
         {
-            Ray raio = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
-            if (Physics.Raycast(raio, out RaycastHit hit))
+            Ray raio = Camera.main.ScreenPointToRay(Input.GetTouch(i).position);
+            RaycastHit hit;
+
+            // Verificar colisões apenas se o toque atingiu um objeto
+            if (Physics.Raycast(raio, out hit))
             {
                 if (hit.collider.CompareTag("AreaRed"))
                 {
-                    foreach (var vermelho in notasRed)
-                    {
-                        Collider redCol = vermelho.GetComponent<Collider>();
-                        if (hit.collider.bounds.Intersects(redCol.bounds))
-                        {
-                            pontos++;
-                            notasDestruidas++;
-                            combo++;
-                            brilhoRed.SetActive(true);
-                            Destroy(vermelho);
-                            Invoke(nameof(SumaBrilho), 0.2f);
-                        }
-                    }
-
+                    DestruirNotasNaArea(notasRed, maosRed, brilhoRed, hit);
                 }
-
-                if (hit.collider.CompareTag("AreaGreen"))
+                else if (hit.collider.CompareTag("AreaGreen"))
                 {
-                    foreach (var verde in notasGreen)
-                    {
-                        Collider greenCol = verde.GetComponent<Collider>();
-                        if (hit.collider.bounds.Intersects(greenCol.bounds))
-                        {
-                            pontos++;
-                            notasDestruidas++;
-                            combo++;
-                            brilhoGreen.SetActive(true);
-                            Destroy(verde);
-                            Invoke(nameof(SumaBrilho), 0.2f);
-                        }
-                    }
+                    DestruirNotasNaArea(notasGreen, maosGreen, brilhoGreen, hit);
                 }
-
-                if (hit.collider.CompareTag("AreaPink"))
+                else if (hit.collider.CompareTag("AreaPink"))
                 {
-                    foreach (var rosa in notasPink)
-                    {
-                        Collider pinkCol = rosa.GetComponent<Collider>();
-                        if (hit.collider.bounds.Intersects(pinkCol.bounds))
-                        {
-                            pontos++;
-                            notasDestruidas++;
-                            combo++;
-                            brilhoPink.SetActive(true);
-                            Destroy(rosa);
-                            Invoke(nameof(SumaBrilho), 0.2f);
-                        }
-                    }
+                    DestruirNotasNaArea(notasPink, maosPink, brilhoPink, hit);
                 }
-
-                if (hit.collider.CompareTag("AreaBlue"))
+                else if (hit.collider.CompareTag("AreaBlue"))
                 {
-                    foreach (var azul in notasBlue)
-                    {
-                        Collider blueCol = azul.GetComponent<Collider>();
-                        if (hit.collider.bounds.Intersects(blueCol.bounds))
-                        {
-                            pontos++;
-                            notasDestruidas++;
-                            combo++;
-                            brilhoBlue.SetActive(true);
-                            Destroy(azul);
-                            Invoke(nameof(SumaBrilho), 0.2f);
-                        }
-                    }
+                    DestruirNotasNaArea(notasBlue, maosBlue, brilhoBlue, hit);
                 }
             }
-        }
-        //SEGUNDO TOQUE
-        if (Input.touchCount == 2)
-        {
-            Ray raio = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
-            Ray raio2 = Camera.main.ScreenPointToRay(Input.GetTouch(1).position);
-            if (Physics.Raycast(raio, out RaycastHit hit))
-            {
-                if (hit.collider.CompareTag("AreaRed"))
-                {
-                    foreach (var vermelho in notasRed)
-                    {
-                        Collider redCol = vermelho.GetComponent<Collider>();
-                        if (hit.collider.bounds.Intersects(redCol.bounds))
-                        {
-                            pontos++;
-                            notasDestruidas++;
-                            brilhoRed.SetActive(true);
-                            Destroy(vermelho);
-                            Invoke(nameof(SumaBrilho), 0.2f);
-                        }
-                    }
-
-                }
-
-                if (hit.collider.CompareTag("AreaGreen"))
-                {
-                    foreach (var verde in notasGreen)
-                    {
-                        Collider greenCol = verde.GetComponent<Collider>();
-                        if (hit.collider.bounds.Intersects(greenCol.bounds))
-                        {
-                            pontos++;
-                            notasDestruidas++;
-                            brilhoGreen.SetActive(true);
-                            Destroy(verde);
-                            Invoke(nameof(SumaBrilho), 0.2f);
-                        }
-                    }
-                }
-
-                if (hit.collider.CompareTag("AreaPink"))
-                {
-                    foreach (var rosa in notasPink)
-                    {
-                        Collider pinkCol = rosa.GetComponent<Collider>();
-                        if (hit.collider.bounds.Intersects(pinkCol.bounds))
-                        {
-                            pontos++;
-                            notasDestruidas++;
-                            brilhoPink.SetActive(true);
-                            Destroy(rosa);
-                            Invoke(nameof(SumaBrilho), 0.2f);
-                        }
-                    }
-                }
-
-                if (hit.collider.CompareTag("AreaBlue"))
-                {
-                    foreach (var azul in notasBlue)
-                    {
-                        Collider blueCol = azul.GetComponent<Collider>();
-                        if (hit.collider.bounds.Intersects(blueCol.bounds))
-                        {
-                            pontos++;
-                            notasDestruidas++;
-                            brilhoBlue.SetActive(true);
-                            Destroy(azul);
-                            Invoke(nameof(SumaBrilho), 0.2f);
-                        }
-                    }
-                }
-
-                // Parte do 2º toque
-
-                if (Physics.Raycast(raio2, out RaycastHit hit2))
-                {
-                    if (hit2.collider.CompareTag("AreaRed"))
-                    {
-                        foreach (var vermelho in notasRed)
-                        {
-                            Collider redCol = vermelho.GetComponent<Collider>();
-                            if (hit2.collider.bounds.Intersects(redCol.bounds))
-                            {
-                                pontos++;
-                                notasDestruidas++;
-                                brilhoRed.SetActive(true);
-                                Destroy(vermelho);
-                                Invoke(nameof(SumaBrilho), 0.2f);
-                            }
-                        }
-
-                    }
-
-                    if (hit2.collider.CompareTag("AreaGreen"))
-                    {
-                        foreach (var verde in notasGreen)
-                        {
-                            Collider greenCol = verde.GetComponent<Collider>();
-                            if (hit2.collider.bounds.Intersects(greenCol.bounds))
-                            {
-                                pontos++;
-                                notasDestruidas++;
-                                brilhoGreen.SetActive(true);
-                                Destroy(verde);
-                                Invoke(nameof(SumaBrilho), 0.2f);
-                            }
-                        }
-                    }
-
-                    if (hit2.collider.CompareTag("AreaPink"))
-                    {
-                        foreach (var rosa in notasPink)
-                        {
-                            Collider pinkCol = rosa.GetComponent<Collider>();
-                            if (hit2.collider.bounds.Intersects(pinkCol.bounds))
-                            {
-                                pontos++;
-                                notasDestruidas++;
-                                brilhoPink.SetActive(true);
-                                Destroy(rosa);
-                                Invoke(nameof(SumaBrilho), 0.2f);
-                            }
-                        }
-                    }
-
-                    if (hit2.collider.CompareTag("AreaBlue"))
-                    {
-                        foreach (var azul in notasBlue)
-                        {
-                            Collider blueCol = azul.GetComponent<Collider>();
-                            if (hit2.collider.bounds.Intersects(blueCol.bounds))
-                            {
-                                pontos++;
-                                notasDestruidas++;
-                                brilhoBlue.SetActive(true);
-                                Destroy(azul);
-                                Invoke(nameof(SumaBrilho), 0.2f);
-                            }
-                        }
-                    }
-                }
-            }
-
-            
         }
 
         if (!musica.isPlaying)
         {
             ContabilizarPontos();
+        }
+    }
+
+    // Método para destruir notas na área
+    void DestruirNotasNaArea(GameObject[] notas, GameObject maos, GameObject brilho, RaycastHit hit)
+    {
+        maos.SetActive(true);
+        Invoke(nameof(SumaMaos), 1.5f);
+
+        foreach (var nota in notas)
+        {
+            Collider notaCol = nota.GetComponent<Collider>();
+
+            if (notaCol.bounds.Intersects(hit.collider.bounds))
+            {
+                pontos++;
+                notasDestruidas++;
+                combo++;
+                brilho.SetActive(true);
+                Destroy(nota);
+                Invoke(nameof(SumaBrilho), 0.2f);
+            }
         }
     }
 
@@ -282,6 +114,15 @@ public class DestruirNotas : MonoBehaviour
         brilhoPink.SetActive(false);
         brilhoBlue.SetActive(false);
     }
+
+    void SumaMaos()
+    {
+        maosRed.SetActive(false);
+        maosGreen.SetActive(false);
+        maosPink.SetActive(false);
+        maosBlue.SetActive(false);
+    }
+
     void ContabilizarPontos()
     {
         painelVitoria.SetActive(true);
@@ -349,6 +190,7 @@ public class DestruirNotas : MonoBehaviour
             }
         }
     }
+
     void VerificarCombo()
     {
         if (!combou)
@@ -387,6 +229,7 @@ public class DestruirNotas : MonoBehaviour
                 break;
         }
     }
+
     IEnumerator AumentaEDiminui()
     {
         float tempoDecorrido = 0f;
