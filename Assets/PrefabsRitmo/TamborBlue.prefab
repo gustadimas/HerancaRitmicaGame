@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 766693267705355141}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.64, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -109,7 +109,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3464756573090277219}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.66, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -178,7 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7713142884527652621}
   - component: {fileID: 5069837706851882795}
-  - component: {fileID: 4612799828732464589}
+  - component: {fileID: 6504298562278504049}
   m_Layer: 0
   m_Name: TamborBlue
   m_TagString: AreaBlue
@@ -219,7 +219,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!136 &4612799828732464589
+--- !u!136 &6504298562278504049
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -229,7 +229,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.3699413
-  m_Height: 1.7510433
-  m_Direction: 0
-  m_Center: {x: -2.6554105, y: 0.75540745, z: 0}
+  m_Radius: 0.98350036
+  m_Height: 1.9670008
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}

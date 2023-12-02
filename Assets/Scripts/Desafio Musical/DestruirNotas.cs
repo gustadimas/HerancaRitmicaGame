@@ -41,7 +41,9 @@ public class DestruirNotas : MonoBehaviour
         notasGreen = GameObject.FindGameObjectsWithTag("Green");
         notasPink = GameObject.FindGameObjectsWithTag("Pink");
         notasBlue = GameObject.FindGameObjectsWithTag("Blue");
+        
         barra.value = pontos;
+        
         if (pontos > 100)
         {
             pontos = 100;
