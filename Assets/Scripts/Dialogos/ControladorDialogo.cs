@@ -104,6 +104,8 @@ public class ControladorDialogo : MonoBehaviour
 
     public void BotaoDialogo()
     {
+        print("dawd");
+
         if (AtivarDialogo.dialogoCollider)
         {
             GameObject[] _npcs = GameObject.FindGameObjectsWithTag("NPC");

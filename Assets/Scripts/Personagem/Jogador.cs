@@ -37,6 +37,12 @@ public class Jogador : MonoBehaviour
             return;
         }
 
+        if (ObjetivoTexto.textoAtivo)
+        {
+            direcaoMovimento = Vector3.zero;
+            return;
+        }
+
         if (!desativarEntradas)
             Joystick();
 
