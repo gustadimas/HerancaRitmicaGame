@@ -27,6 +27,7 @@ public class ControladorDialogo : MonoBehaviour
 
     void Awake()
     {
+        AtivarDialogo.dialogoCollider = false;
         botaoInteragir.SetActive(false);
         backgroundCaixa.transform.localScale = Vector3.zero;
         jogador = FindObjectOfType<Jogador>();

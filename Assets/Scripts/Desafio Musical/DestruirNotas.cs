@@ -278,6 +278,7 @@ public class DestruirNotas : MonoBehaviour
         }
     }
 
+    [ContextMenu("PularCena")]
     public void MudarCena()
     {
         if (desafioAtual.name == "SambaDeRoda")

@@ -25,12 +25,10 @@ public class MovimentoNPC : MonoBehaviour
         if (AtivarDialogo.dialogoCollider)
         {
             agent.isStopped = true;
-
         }
         else
         {
             agent.isStopped = false;
-
         }
     }
 
@@ -60,18 +58,20 @@ public class MovimentoNPC : MonoBehaviour
     {
         Vector3 movimento = agent.velocity;
 
-        if (movimento.magnitude > 0.1f)
-        {
-            anima.SetInteger("estado", 1);
-        }
-        else
-        {
-            anima.SetInteger("estado", 0);
-        }
-
         if (ControladorDialogo.dialogoAtivo)
         {
             anima.SetInteger("estado", 2);
+        }
+        else
+        {
+            if (movimento.magnitude > 0.1f)
+            {
+                anima.SetInteger("estado", 1);
+            }
+            else
+            {
+                anima.SetInteger("estado", 0);
+            }
         }
     }
 }

@@ -5,11 +5,11 @@ public enum estadoMovimento { parado, andando, falando }
 
 public class Jogador : MonoBehaviour
 {
-    [Header("Configurações:")]
+    [Header("Configuraï¿½ï¿½es:")]
     [SerializeField] bool desativarEntradas = false;
     [SerializeField] float velocidadeMovimento;
 
-    [Header("Atribuições:")]
+    [Header("Atribuiï¿½ï¿½es:")]
     [SerializeField] RectTransform joystick;
     [SerializeField] RectTransform areaJoystick;
     [SerializeField] RectTransform pontoJoystick;
@@ -32,7 +32,10 @@ public class Jogador : MonoBehaviour
     void Update()
     {
         if (ControladorDialogo.dialogoAtivo)
+        {
+            direcaoMovimento = Vector3.zero;
             return;
+        }
 
         if (!desativarEntradas)
             Joystick();
