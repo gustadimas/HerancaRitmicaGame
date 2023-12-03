@@ -6340,7 +6340,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 677670282}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f15b480e7a85e234897437595dfab159, type: 3}
   m_Name: 
@@ -18648,6 +18648,8 @@ MonoBehaviour:
   raioDeVagar: 15
   tempoEntreDestinos: 8
   tempoDeEspera: 1
+  aceleracaoMaxima: 1
+  velocidadeDesejada: 1
 --- !u!1001 &1863689374
 PrefabInstance:
   m_ObjectHideFlags: 0
