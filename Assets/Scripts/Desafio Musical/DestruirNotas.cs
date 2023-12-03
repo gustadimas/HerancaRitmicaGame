@@ -15,11 +15,12 @@ public class DestruirNotas : MonoBehaviour
     [SerializeField] Sprite[] mensagens;
 
     AudioSource musica;
-    [SerializeField] GameObject painelVitoria, brilhoRed, brilhoGreen, brilhoPink, brilhoBlue, maosRed, maosGreen, maosPink, maosBlue;
+    [SerializeField] GameObject painelVitoria, particulasRed, particulasGreen, particulasPink, particulasBlue, maosRed, maosGreen, maosPink, maosBlue;
 
     public static bool venceuSamba, venceuJongo, venceuSussa;
 
     bool combou;
+    Vector2 touchInicioPosicao;
 
     private void Awake()
     {
@@ -32,7 +33,7 @@ public class DestruirNotas : MonoBehaviour
         venceuSamba = false;
         venceuJongo = false;
         venceuSussa = false;
-        SumaBrilho();
+        SumaParticulas();
         SumaMaos();
     }
 
@@ -51,31 +52,48 @@ public class DestruirNotas : MonoBehaviour
             pontos = 100;
         }
 
-        // Iterar por todos os toques
         for (int i = 0; i < Input.touchCount; i++)
         {
-            Ray raio = Camera.main.ScreenPointToRay(Input.GetTouch(i).position);
+            Touch touch = Input.GetTouch(i);
+            Ray raio = Camera.main.ScreenPointToRay(touch.position);
             RaycastHit hit;
 
-            // Verificar colisões apenas se o toque atingiu um objeto
-            if (Physics.Raycast(raio, out hit))
+            switch (touch.phase)
             {
-                if (hit.collider.CompareTag("AreaRed"))
-                {
-                    DestruirNotasNaArea(notasRed, maosRed, brilhoRed, hit);
-                }
-                else if (hit.collider.CompareTag("AreaGreen"))
-                {
-                    DestruirNotasNaArea(notasGreen, maosGreen, brilhoGreen, hit);
-                }
-                else if (hit.collider.CompareTag("AreaPink"))
-                {
-                    DestruirNotasNaArea(notasPink, maosPink, brilhoPink, hit);
-                }
-                else if (hit.collider.CompareTag("AreaBlue"))
-                {
-                    DestruirNotasNaArea(notasBlue, maosBlue, brilhoBlue, hit);
-                }
+                case TouchPhase.Began:
+                    if (Physics.Raycast(raio, out hit))
+                    {
+                        if (hit.collider.CompareTag("AreaRed") ||
+                            hit.collider.CompareTag("AreaGreen") ||
+                            hit.collider.CompareTag("AreaPink") ||
+                            hit.collider.CompareTag("AreaBlue"))
+                        {
+                            touchInicioPosicao = touch.position;
+                        }
+                    }
+                    break;
+
+                case TouchPhase.Ended:
+                    if (Physics.Raycast(raio, out hit) &&
+                        (hit.collider.CompareTag("AreaRed") ||
+                         hit.collider.CompareTag("AreaGreen") ||
+                         hit.collider.CompareTag("AreaPink") ||
+                         hit.collider.CompareTag("AreaBlue")))
+                    {
+                        float distancia = Vector2.Distance(touchInicioPosicao, touch.position);
+                        if (distancia < 10f)
+                        {
+                            if (hit.collider.CompareTag("AreaRed"))
+                                DestruirNotasNaArea(notasRed, maosRed, particulasRed, hit);
+                            else if (hit.collider.CompareTag("AreaGreen"))
+                                DestruirNotasNaArea(notasGreen, maosGreen, particulasGreen, hit);
+                            else if (hit.collider.CompareTag("AreaPink"))
+                                DestruirNotasNaArea(notasPink, maosPink, particulasPink, hit);
+                            else if (hit.collider.CompareTag("AreaBlue"))
+                                DestruirNotasNaArea(notasBlue, maosBlue, particulasBlue, hit);
+                        }
+                    }
+                    break;
             }
         }
 
@@ -86,7 +104,7 @@ public class DestruirNotas : MonoBehaviour
     }
 
     // Método para destruir notas na área
-    void DestruirNotasNaArea(GameObject[] notas, GameObject maos, GameObject brilho, RaycastHit hit)
+    void DestruirNotasNaArea(GameObject[] notas, GameObject maos, GameObject particulas, RaycastHit hit)
     {
         maos.SetActive(true);
         Invoke(nameof(SumaMaos), 1.5f);
@@ -100,19 +118,25 @@ public class DestruirNotas : MonoBehaviour
                 pontos++;
                 notasDestruidas++;
                 combo++;
-                brilho.SetActive(true);
+                EmitirParticulas(particulas);
                 Destroy(nota);
-                Invoke(nameof(SumaBrilho), 0.2f);
             }
         }
     }
 
-    void SumaBrilho()
+    void EmitirParticulas(GameObject particulas)
     {
-        brilhoRed.SetActive(false);
-        brilhoGreen.SetActive(false);
-        brilhoPink.SetActive(false);
-        brilhoBlue.SetActive(false);
+        particulas.SetActive(true);
+        particulas.GetComponent<ParticleSystem>().Play();
+        // Se as partículas tiverem um componente de áudio, você pode ativar o áudio aqui também
+    }
+
+    void SumaParticulas()
+    {
+        particulasRed.SetActive(false);
+        particulasGreen.SetActive(false);
+        particulasPink.SetActive(false);
+        particulasBlue.SetActive(false);
     }
 
     void SumaMaos()
