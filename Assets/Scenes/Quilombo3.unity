@@ -766,6 +766,10 @@ PrefabInstance:
       value: "Voc\xEA amadureceu tanto, Amina. Se tornou uma l\xEDder que deixaria
         a sua m\xE3e orgulhosa."
       objectReference: {fileID: 0}
+    - target: {fileID: 3023208362910528692, guid: 1662963716a85d34da5b75ed98885c4b, type: 3}
+      propertyPath: m_Materials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2afe34d4228434440931c94ec3f1cca1, type: 2}
     - target: {fileID: 3878540319696077465, guid: 1662963716a85d34da5b75ed98885c4b, type: 3}
       propertyPath: m_Size.x
       value: 13.293827
