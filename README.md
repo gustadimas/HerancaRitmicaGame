@@ -4,7 +4,7 @@ Em Herança Rítmica: A Jornada de Amina, Amina, uma jovem inexperiente, herda a
 
 ## Objetivo do desenvolvimento do jogo
 
-“Herança Rítmica: A Jornada de Amina” é um jogo que destaca a **diversidade e as relações étnico-raciais**, inspirado pelo **Quilombo Quingoma** *[Instagram do Quingoma](https://www.instagram.com/quingomaquilombo/)*. O jogo coloca o jogador na pele de Amina, uma jovem líder que herda a responsabilidade de unir sua comunidade após a morte repentina de sua mãe.
+“Herança Rítmica: A Jornada de Amina” é um jogo que destaca a **diversidade e as relações étnico-raciais**, inspirado pelo*[**Quilombo Quingoma**](https://www.instagram.com/quingomaquilombo/)*. O jogo coloca o jogador na pele de Amina, uma jovem líder que herda a responsabilidade de unir sua comunidade após a morte repentina de sua mãe.
 
 ## Imagens do jogo
 
