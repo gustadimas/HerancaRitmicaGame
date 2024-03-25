@@ -13,27 +13,27 @@ Em Herança Rítmica: A Jornada de Amina, Amina, uma jovem inexperiente, herda a
 ![Image](./Docs/Images/Menu.png)
 
 - **Mapa dos Quilombos**
-  - Apartamento da vítima, onde ocorreu o assassinato.
+  - Mapa que mostra a sequência de quilombos que o jogador irá passar.
   
 ![Image](./Docs/Images/Mapa.png)
 
 - **Primeiro Quilombo: "Quingoma"**
-  - Dois velhinhos, moradores do prédio estão ao lado de fora, o jogador pode interagir com eles.
+  - Quilombo onde Amina nasceu e terá seu treinamento.
 
 ![Image](./Docs/Images/Quingoma.png)
 
 - **Desafios Musicais**
-  - O jogador está na cidade e pode entrar em determinados locais.
+  - Neste minigame de ritmo o jogador aprenderá a essência musical dos quilombos.
 
 ![Image](./Docs/Images/Samba%20de%20Roda.png)
 
 - **Outro Quilombo: "Sol Nascente"**
-  - Um dos puzzles que o jogador precisa resolver para adquirir informações.
+  - Um spoiler de outro quilombo que a personagem principal terá acesso.
 
 ![Image](./Docs/Images/Sol%20Nascente.png)
 
 - **Modo Online: Competição no Desafio Musical**
-  - Um dos locais em que o jogador pode encontrar pistas.
+  - O jogo possui um modo online, onde dois jogadores poderão disputar acertos das notas.
 
 ![Image](./Docs/Images/Online.png)
 
@@ -45,4 +45,5 @@ Em Herança Rítmica: A Jornada de Amina, Amina, uma jovem inexperiente, herda a
 ## Tecnologias utilizadas
 
 - **Unity (Game Engine)**
-- **Aseprite (Software de Pixel Art)**
+- **Blender (Software para criação de modelagens e animações 3D)**
+- **Adobe Ilustrator (Software de criação de artes)**
